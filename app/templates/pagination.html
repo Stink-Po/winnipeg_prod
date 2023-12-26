@@ -1,0 +1,17 @@
+<div class="blog-pagination">
+    <ul class="justify-content-center">
+        {% if page.has_previous %}
+            <li><a href="?page={{ page.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        {% for page_num in page.paginator.page_range %}
+            {% if page_num == page.number %}
+                <li class="active"><a href="#">{{ page_num }}</a></li>
+            {% else %}
+                <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if page.has_next %}
+            <li><a href="?page={{ page.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
+</div>

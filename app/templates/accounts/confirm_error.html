@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Winni Furance | Confirm Email Error{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="Winni Furance Confirm Email Error Page">
+{% endblock %}
+{% block content %}<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li>Error while confirm Your Email Address</li>
+            </ol>
+            <h2>Hello {{ user.first_name }}</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container text-success" data-aos="fade-up">
+
+            <h3 class="heading-red text-center">{{ message }}
+            </h3>
+            {% if  not user.email_confirmed %}
+            <a class="button-style" href="{% url "accounts:send_confirmation_email" user_id %}">Send</a>
+            {% endif %}
+        </div>
+    </section>
+    <div class="div-space pt-5 pb-5" >
+
+    </div>
+{%  endblock %}

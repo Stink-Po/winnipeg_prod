@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block title %} Winni Furance | Blog : {{ post.title }}{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="{{ post.title }}">
+    <meta name="keywords" content="Winni Furnace, {{ post.title }} post, weblog, new post">
+    <meta property="og:title" content="Winni Furnace | Blog : {{ post.title }}">
+    <meta property="og:description" content="{{ post.subtitle }}">
+    <meta property="og:url" content="{{ post.get_absolute_url }}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
+            </ol>
+            <h2>{{ post.title }}</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-8 entries">
+
+                    <article class="entry entry-single">
+
+                        <div class="entry-img">
+                            <img src="{{ post.image.url }}" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                           {{ post.subtitle }}
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> 
+                                    <time datetime="2020-01-01">{{ post.created }}</time>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                {{ post.body }}
+                            </p>
+
+                            
+                        </div>
+
+                        <div class="entry-footer">
+                            <i class="bi bi-tags"></i>
+                            <ul class="tags">
+                                {% for tag in tags %}
+                                    <li><a href="{% url "blog:post_list_by_tag" tag.slug %}">{{ tag }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+
+                    <div class="blog-comments">
+
+
+                    </div><!-- End blog comments -->
+
+                </div><!-- End blog entries list -->
+
+                <div class="col-lg-4">
+
+                    <div class="sidebar">
+
+                        <h3 class="sidebar-title">Search</h3>
+                        <div class="sidebar-item search-form">
+                            <form action="" method="get">
+                                <input type="text" name="{{ form.query.name }}" class="form-control"
+                                   id="{{ form.query.id_for_label }}" placeholder="" required>
+                                <button type="submit"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div><!-- End sidebar search formn-->
+
+                        <h3 class="sidebar-title">Similar Posts</h3>
+                        <div class="sidebar-item recent-posts">
+                            {% for post in similar_posts %}
+                                <div class="post-item clearfix">
+                                    <img src="{{ post.image.url }}" alt="">
+                                    <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+                                    <time datetime="2020-01-01">{{ post.created }}</time>
+                                </div>
+                            {% endfor %}
+
+
+                        </div><!-- End sidebar recent posts-->
+                        {% if tags %}
+                            <h3 class="sidebar-title">Tags</h3>
+                            <div class="sidebar-item tags">
+                                <ul>
+                                    {% for tag in tags %}
+                                        <li><a href="{% url "blog:post_list_by_tag" tag.slug %}">{{ tag }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div><!-- End sidebar tags-->
+                        {% endif %}
+                    </div><!-- End sidebar -->
+
+                </div><!-- End blog sidebar -->
+
+            </div>
+
+        </div>
+    </section><!-- End Blog Single Section -->
+
+{% endblock %}
+    

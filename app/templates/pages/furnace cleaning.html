@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_tags %}
+    <title>{% block title %}Winni Furance | Professional Furnace Cleaning Services in Winnipeg,
+        Manitoba{% endblock %}</title>
+    <meta name="description"
+          content="Ensure the efficiency and safety of your heating system with professional furnace cleaning services in Winnipeg. Winni-Furance offers comprehensive furnace cleaning solutions to keep your home warm and comfortable during the colder months. Contact us for thorough furnace cleaning, improved heating efficiency, enhanced indoor air quality, and extended furnace lifespan.">
+    <meta name="keywords"
+          content="Winni Furance, furnace cleaning, professional furnace cleaning, heating efficiency, energy costs, indoor air quality, furnace lifespan, Winnipeg, Manitoba, benefits of furnace cleaning, choose Winni-Furance, expert inspection, preventive maintenance, keep your home safe and cozy, book your furnace cleaning">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | Professional Furnace Cleaning Services in Winnipeg, Manitoba">
+    <meta property="og:description"
+          content="Ensure the efficiency and safety of your heating system with professional furnace cleaning services in Winnipeg. Winni-Furance offers comprehensive furnace cleaning solutions to keep your home warm and comfortable during the colder months. Contact us for thorough furnace cleaning, improved heating efficiency, enhanced indoor air quality, and extended furnace lifespan.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{% url 'pages:furnace_cleaning' %}">
+    <meta property="og:image" content="{% static 'img/Furnace-Cleaning.jpg' %}">
+    <!-- Add the actual path to your image -->
+    <meta property="og:image:alt" content="Furnace Cleaning">
+
+{% endblock %}
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li><a href="{% url 'pages:services' %}">Services</a></li>
+                    <li>Furnace Cleaning</li>
+                </ol>
+                <h2>Professional Furnace Cleaning</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <section class="inner-page pt-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Left column with image -->
+                    <div class="col-md-6">
+                        <img src="{% static 'img/Furnace-Cleaning.jpg' %}" class="img-fluid" alt="Furnace Cleaning">
+                    </div>
+
+                    <!-- Right column with text -->
+                    <div class="col-md-6">
+                        <div class="p-4">
+                            <h2 class="entry-title pt-5 pb-3 heading-red">
+                                Professional Furnace Cleaning Services in Winnipeg
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-5">
+
+                <div class="entries">
+
+                    <article class="entry entry-single">
+
+                        <div class="entry-content">
+                            <p>
+                                Ensure the efficiency and safety of your heating system with professional furnace
+                                cleaning
+                                services in Winnipeg and the nearby areas. Winni-Furance offers comprehensive furnace
+                                cleaning solutions to keep your home warm and comfortable during the colder months.
+                            </p>
+
+                            <blockquote>
+                                <p>
+                                    Our certified technicians specialize in thorough furnace cleaning to:
+                                </p>
+                            </blockquote>
+                            <ul>
+                                <li>Improve heating efficiency and reduce energy costs</li>
+                                <li>Enhance indoor air quality by removing dust and allergens</li>
+                                <li>Extend the lifespan of your furnace and prevent costly repairs</li>
+                            </ul>
+
+                            <h3 class="heading-red">Benefits of Professional Furnace Cleaning</h3>
+                            <p>
+                                Regular furnace cleaning is essential to maintain a healthy and efficient heating
+                                system. At Winni-Furance, we understand the unique heating needs of Winnipeg residents
+                                and provide trustworthy services without unnecessary upselling.
+                            </p>
+
+                            <h3 class="heading-red">Why Choose Winni-Furance for Furnace Cleaning?</h3>
+                            <p>
+                                We prioritize your safety and comfort, offering top-of-the-line equipment to ensure a
+                                proper seal and thorough cleaning. Our certified technicians use advanced technology to
+                                remove dirt, dust, and debris, improving your furnace's performance.
+                            </p>
+
+                            <h3 class="heading-red">Expert Furnace Inspection and Maintenance</h3>
+                            <p>
+                                Beyond cleaning, our experts conduct detailed inspections to identify potential issues
+                                and provide preventive maintenance. Trust Winni-Furance for reliable furnace cleaning
+                                services in Winnipeg, Manitoba, and nearby areas.
+                            </p>
+
+                            <h3 class="heading-red">Keep Your Home Safe and Cozy</h3>
+                            <p>
+                                Don't compromise on your family's comfort and safety. Schedule regular furnace cleaning
+                                with Winni-Furance to enjoy a warm and cozy home throughout the winter. Our services are
+                                designed to eliminate allergens, improve air quality, and ensure your furnace operates
+                                at peak efficiency.
+                            </p>
+
+                            <h3 class="heading-red">Book Your Furnace Cleaning Today</h3>
+                            <p>
+                                Ready to experience the benefits of professional furnace cleaning? Contact Winni-Furance
+                                today to schedule your appointment in Winnipeg and the surrounding areas.
+                            </p>
+
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                </div><!-- End blog entries list -->
+            </div>
+            {% include 'services/order_form.html' %}
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

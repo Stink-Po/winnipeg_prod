@@ -1,0 +1,43 @@
+<article class="entry">
+    <h3 class="heading-red">Score and Discount Codes</h3>
+    {% if user.score > 100 %}
+        <a href="{% url 'score:create_new_code' %}" class="button-style">Create New Code</a>
+    {% else %}
+        <p>You Need to at least have <strong class="text-success">100 Score</strong> To Create New Discount Code</p>
+    {% endif %}
+    {% if discount_codes %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for code in discount_codes %}
+            <tr>
+            {% if not code.used %}
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ code.code }}</td>
+            {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% if user.is_staff %}
+        <form action="{% url 'score:search_discount_code' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                    {{ search_form.query.label_tag }}
+                    <input type="text" name="{{ search_form.query.name }}" class="form-control"
+                           id="{{ search_form.query.id_for_label }}" placeholder="Enter a Code To Validate" required>
+                </div>
+            <div class="pt-3">
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+
+    {% endif %}
+
+</article>

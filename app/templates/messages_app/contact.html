@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Winni Furance | Contact  HVAC Services in Winnipeg, Manitoba{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="Contact  HVAC Services in Winnipeg, Manitoba">
+    <meta name="keywords" content="Winni Furnace, contact, HVAC Services, winnipeg, winnipeg manitoba">
+    <meta property="og:title" content="Winni Furnace | Contact  HVAC Services in Winnipeg, Manitoba">
+    <meta property="og:description" content="Contact  HVAC Services in Winnipeg, Manitoba">
+    <meta property="og:url" content="{% url 'messages_app:contact' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    {% include 'messages_app/message_form.html' %}
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_tags %}
+    <title>{% block title %}Winni Furance | Professional Air Conditioner Installation in Winnipeg, Manitoba{% endblock %}</title>
+    <meta name="description" content="Enjoy cool and comfortable indoor spaces with professional air conditioner installation services in Winnipeg and surrounding areas. Winni-Furance specializes in expert installation, ensuring your home stays refreshingly cool during the hottest months. Contact us for top-notch AC installation without compromising quality.">
+    <meta name="keywords" content="Winni Furance, air conditioner installation, AC installation, professional installation, Winnipeg, Manitoba, cooling efficiency, expert consultation, quality workmanship, reliable installation, stay cool, book AC installation">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | Professional Air Conditioner Installation in Winnipeg, Manitoba">
+    <meta property="og:description" content="Enjoy cool and comfortable indoor spaces with professional air conditioner installation services in Winnipeg and surrounding areas. Winni-Furance specializes in expert installation, ensuring your home stays refreshingly cool during the hottest months. Contact us for top-notch AC installation without compromising quality.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{% url 'pages:air_conditioner_installation' %}">
+    <meta property="og:image" content="{% static 'img/AIR-CONDITIONER-INSTALLATION.jpg' %}">
+    <meta property="og:image:alt" content="Air Conditioner Installation">
+
+{% endblock %}
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li>Services</li>
+                </ol>
+                <h2>Professional Air Conditioner Installation in Winnipeg</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <section class="inner-page pt-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Left column with image -->
+                    <div class="col-md-6">
+                        <img src="{% static 'img/AIR-CONDITIONER-INSTALLATION.jpg' %}" class="img-fluid" alt="Air Conditioner Installation">
+                    </div>
+
+                    <!-- Right column with text -->
+                    <div class="col-md-6">
+                        <div class="p-4">
+                            <h2 class="entry-title pt-5 pb-3 heading-red">
+                                Expert Air Conditioner Installation Services in Winnipeg
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-5">
+
+                <div class="entries">
+
+                    <article class="entry entry-single">
+
+                        <div class="entry-content">
+                            <p>
+                                Enjoy cool and comfortable indoor spaces with professional air conditioner installation
+                                services in Winnipeg and the surrounding areas. Winni-Furance specializes in expert
+                                installation, ensuring your home stays refreshingly cool during the hottest months.
+                            </p>
+
+                            <blockquote>
+                                <p>
+                                    Our certified technicians provide precise air conditioner installation to:
+                                </p>
+                            </blockquote>
+                            <ul>
+                                <li>Maximize cooling efficiency for optimal comfort</li>
+                                <li>Ensure proper sizing and placement of your air conditioning unit</li>
+                                <li>Guarantee a seamless and reliable installation process</li>
+                            </ul>
+
+                            <h3 class="heading-red">Benefits of Professional Air Conditioner Installation</h3>
+                            <p>
+                                Investing in expert air conditioner installation offers numerous advantages. From
+                                energy efficiency to extended lifespan, Winni-Furance ensures your cooling system
+                                operates at its best.
+                            </p>
+
+                            <h3 class="heading-red">Why Choose Winni-Furance for AC Installation?</h3>
+                            <p>
+                                We prioritize your comfort and satisfaction, offering top-notch services without
+                                compromising on quality. Our certified technicians use advanced technology to install
+                                your air conditioner with precision and care.
+                            </p>
+
+                            <h3 class="heading-red">Expert Consultation for AC Selection</h3>
+                            <p>
+                                Unsure about the right air conditioner for your home? Winni-Furance provides expert
+                                consultation to help you choose the ideal unit based on your cooling needs, budget, and
+                                energy efficiency goals.
+                            </p>
+
+                            <h3 class="heading-red">Quality Workmanship and Timely Installation</h3>
+                            <p>
+                                Our team is dedicated to delivering quality workmanship and ensuring your air
+                                conditioner is installed promptly. Trust Winni-Furance for reliable air conditioner
+                                installation in Winnipeg, Manitoba, and nearby areas.
+                            </p>
+
+                            <h3 class="heading-red">Stay Cool All Summer Long</h3>
+                            <p>
+                                Don't let the summer heat get you down. Schedule professional air conditioner
+                                installation with Winni-Furance and enjoy a cool and comfortable home throughout the
+                                warmest months.
+                            </p>
+
+                            <h3 class="heading-red">Book Your AC Installation Today</h3>
+                            <p>
+                                Ready to upgrade your home with a new air conditioner? Contact Winni-Furance today to
+                                schedule your professional installation in Winnipeg and the surrounding areas.
+                            </p>
+
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                </div><!-- End blog entries list -->
+            </div>
+            {% include 'services/order_form.html' %}
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

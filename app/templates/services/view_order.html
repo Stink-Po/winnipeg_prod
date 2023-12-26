@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Winni Furance | Order Details{% endblock %}
+
+{% block content %}
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li><a href="{% url 'accounts:dashboard' %}">Dashboard</a> </li>
+                <li>View Order Detail</li>
+            </ol>
+        </div>
+    </section>
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <h3>Order From {{ order.name }}</h3>
+            <p>Order Time {{ order.order_time }}</p>
+            <h5>Contact Details:</h5>
+            <ul>
+                <li>
+                    <p>Email : {{ order.email }}</p>
+                </li>
+                <li>
+                    <p>Phone Number : {{ order.phone }}</p>
+                </li>
+                <li>
+                    {%  if order.address %}
+                    <p>Address : {{ order.address }}</p>
+                    {% else %}
+                    <p>Address : </p>
+                    {% endif %}
+                </li>
+            <li>Ordered Service : {{ order.get_service_display }}</li>
+
+            </ul>
+            <h5 class="pb-3">Message:</h5>
+            <p> {{ order.message }} </p>
+
+            <p><a class="button-style" href="{% url 'services:finish_order' order_id=order.id %}">Flag order Finished</a></p>
+        </div>
+    </section>
+
+
+
+{% endblock %}

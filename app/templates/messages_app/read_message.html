@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Winni Furance | Read Message{% endblock %}
+
+{% block content %}
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li><a href="{% url 'accounts:dashboard' %}">Dashboard</a> </li>
+                <li>Read Message</li>
+            </ol>
+        </div>
+    </section>
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <h3>Message from {{ message.name }}</h3>
+            <p>Sent at {{ message.created }}</p>
+            <h5>Contact Detail:</h5>
+            <ul>
+                <li>
+                    <p>Email : {{ message.email }}</p>
+                </li>
+                <li>
+                    <p>Phone Number : {{ message.phone }}</p>
+                </li>
+                <li>
+                    <p>Address : {{ message.address }}</p>
+                </li>
+            </ul>
+            <h5>Message:</h5>
+            <p>{{ message.message }}</p>
+            <p><a href="{% url 'messages_app:is_read' message_id=message.id %}">Flag This Message Read</a></p>
+        </div>
+    </section>
+
+
+
+{% endblock %}

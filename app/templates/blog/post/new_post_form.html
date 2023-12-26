@@ -1,0 +1,95 @@
+<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+    <div class="col-xl-9 col-lg-12 mt-4">
+        <form action="{% url 'blog:create_post' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors|striptags }}
+                </div>
+            {% endif %}
+
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ form.title.label_tag }}
+                    <input type="text" name="{{ form.title.name }}" class="form-control"
+                           id="{{ form.title.id_for_label }}" placeholder="" required>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ form.subtitle.label_tag }}
+                    <input type="text" name="{{ form.subtitle.name }}" class="form-control"
+                           id="{{ form.subtitle.id_for_label }}" placeholder="" required>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ form.body.label_tag }}
+                    <textarea name="{{ form.body.name }}" class="form-control"
+                              id="{{ form.body.id_for_label }}" placeholder="" rows="7"
+                              required></textarea>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="form-group">
+
+                    {{ form.tags.label_tag }}
+                    <input type="text" name="{{ form.tags.name }}" class="form-control"
+                           id="{{ form.tags.id_for_label }}" placeholder="">
+
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ form.image.label_tag }}
+                    <input type="file" name="{{ form.image.name }}" class="form-control"
+                           id="{{ form.image.id_for_label }}" placeholder="">
+
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ form.author.label_tag }}
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+
+                        </div>
+                        <select name="{{ form.author.name }}" id="{{ form.author.id_for_label }}" class="form-control">
+                            {% for option in form.author.field.queryset %}
+                                <option value="{{ option.pk }}" {% if option == form.author.value %}selected{% endif %}>
+                                    {{ option.username }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ form.status.label_tag }}
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+
+                        </div>
+                        <select name="{{ form.status.name }}" id="{{ form.status.id_for_label }}" class="form-control">
+                            {% for value, label in form.status.field.choices %}
+                                <option value="{{ value }}" {% if value == form.status.value %}selected{% endif %}>
+                                    {{ label }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-3">
+                <button class="button-style" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

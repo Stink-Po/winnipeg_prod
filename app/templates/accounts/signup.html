@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Winni Furance | SignUp{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="signup a new account in Winni Furnace">
+    <meta name="keywords" content="Winni Furnace, user account, dashboard, signup">
+    <meta property="og:title" content="Winni Furnace | SignUp">
+    <meta property="og:description" content="signup new account">
+    <meta property="og:url" content="{% url 'accounts:signup' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2 class="heading-red" data-aos="fade-up">SignUp</h2>
+                <p data-aos="fade-up">SignUp A New account</p>
+            </div>
+
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-9 col-lg-12 mt-4">
+                    <form action="" method="post" role="form">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            <div class="row justify-content-center">
+                                <div class="alert alert-danger col-md-6">
+                                    {{ form.non_field_errors|striptags }}
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group ">
+                                {{ form.username.label_tag }}
+                                <input type="text" name="{{ form.username.name }}" class="form-control"
+                                       id="{{ form.username.id_for_label }}" placeholder="Username" required>
+                            </div>
+                            <div class="col-md-6 form-group ">
+                                {{ form.email.label_tag }}
+                                <input type="text" name="{{ form.email.name }}" class="form-control"
+                                       id="{{ form.email.id_for_label }}" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group p-3">
+                                {{ form.password1.label_tag }}
+                                <input type="password" name="{{ form.password1.name }}" class="form-control"
+                                       id="{{ form.password1.id_for_label }}" placeholder="Password" required>
+                            </div>
+                            <div class="col-md-6 form-group p-3">
+                                {{ form.password2.label_tag }}
+                                <input type="password" name="{{ form.password2.name }}" class="form-control"
+                                       id="{{ form.password2.id_for_label }}" placeholder="Repeat Password" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 p-3">
+                                {{ form.first_name.label_tag }}
+                                <input type="text" name="{{ form.first_name.name }}" class="form-control"
+                                       id="{{ form.first_name.id_for_label }}" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0 p-3">
+                                {{ form.last_name.label_tag }}
+                                <input type="text" name="{{ form.last_name.name }}" class="form-control"
+                                       id="{{ form.last_name.id_for_label }}" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 p-3">
+                                {{ form.phone.label_tag }}
+                                <input type="text" name="{{ form.phone.name }}" class="form-control"
+                                       id="{{ form.phone.id_for_label }}" placeholder="Phone Number" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0 p-3">
+                                {{ form.address.label_tag }}
+                                <input type="text" name="{{ form.address.name }}" class="form-control"
+                                       id="{{ form.address.id_for_label }}" placeholder="Address ( Optional )">
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button class="button-style btn btn-lg" type="submit">SignUp</button>
+                            <p class="pt-3"><a href="{% url 'login' %}">Already Have Account ?</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+{% endblock %}

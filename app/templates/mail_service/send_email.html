@@ -1,0 +1,28 @@
+<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+    <div class="col-xl-9 col-lg-12 mt-4">
+        <form action="{% url 'mail_service:send-mass-mail' %}" method="post" role="form">
+
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-md-6 form-group ">
+                    {{ form.subject.label_tag }}
+                    <input type="text" name="{{ form.subject.name }}" class="form-control"
+                           id="{{ form.subject.id_for_label }}" placeholder="Subject" required>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                 <div class="form-group">
+                    {{ form.body.label_tag }}
+                    <textarea name="{{ form.body.name }}" class="form-control"
+                              id="{{ form.body.id_for_label }}" placeholder="" rows="7"
+                              required></textarea>
+                </div>
+            </div>
+
+
+            <div class="text-center pt-3">
+                <button class="button-style" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</div>

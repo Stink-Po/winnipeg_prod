@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Winni Furance | Success Order{% endblock %}
+
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li><a href="{% url "pages:services" %}">Services</a></li>
+                    <li><a href="{% url "services:order" %}"> Book A Services</a></li>
+                    <li>Success Order</li>
+                </ol>
+                <h2 class="heading-red">Thank you for choosing Winni-furance</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="entries">
+
+                    <article class="entry entry-single">
+                        <div class="entry-content">
+                            <h3 class="heading-red">
+                                Order submitted
+                            </h3>
+                            <p>
+                                Thank you for choosing Winni-furance for your <Strong>" {{ service_name }}" </strong>! We have
+                                successfully received your order, and we appreciate your trust in our services.
+
+                                Our team is working diligently to process your request, and we will get in touch with
+                                you as soon as possible. Your satisfaction is our priority, and we look forward to
+                                providing you with top-notch service.
+
+                                In the meantime, if you have any questions or additional details to share, feel free to
+                                reach out to us at : <strong> email@eaxampele.com </strong>
+
+                                Thank you again for choosing Winni-furance. We value your business and look forward to
+                                serving you!
+
+                                Best regards,
+                                The Winni-furance Team
+                            </p>
+                        </div>
+
+
+                    </article><!-- End blog entry -->
+
+                </div><!-- End blog entries list -->
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

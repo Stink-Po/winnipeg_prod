@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Winni Furance | Send Confirmation Email{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="sending confirmation email  for Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, user account, dashboard, confirm email">
+    <meta property="og:title" content="Winni Furnace | Send Confirmation Email">
+    <meta property="og:description" content="confirm email">
+    <meta property="og:url" content="{% url 'accounts:send_email_confirmation' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li>Send Confirmation Email</li>
+            </ol>
+            <h2>Hello {{ user.first_name }} </h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up" style="height: 300px">
+            <p>
+                Dear {{ user.first_name }} We Send Confirmation Email To : <strong>{{ user.email }}</strong>
+                if you cant find the Email in Your Inbox check the spam folder
+                by confirming Your Email Address you get your unique Referral link and
+                {% if user.have_referral %}
+                <strong>+ 10</strong> Score in the website
+                {% else %}
+                <strong>+ 5</strong> Score in the website
+                {% endif %}
+            </p>
+
+        </div>
+    </section>
+{%  endblock %}

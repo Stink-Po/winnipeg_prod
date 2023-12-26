@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Winni Furance | Invalid Rest Link{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="Invalid Rest link for Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, user account, dashboard, rest">
+    <meta property="og:title" content="Winni Furnace | Dashboard">
+    <meta property="og:description" content="rest password">
+    <meta property="og:url" content="{% url 'accounts:email_not_found' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+
+    <section class="contact">
+        <div class="container" style="height: 300px">
+
+            <div class="section-title">
+                <h2 data-aos="fade-up">Error</h2>
+                <p data-aos="fade-up">Your link in invalid</p>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-9 col-lg-12 mt-4">
+                    <p>Please request a New link<a href="{% url 'accounts:forgot_password' %}">here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

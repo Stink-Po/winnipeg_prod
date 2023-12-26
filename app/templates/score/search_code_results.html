@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Winni Furance | Search Code{% endblock %}
+{% block content %}
+    <section>>
+        <div class="container p-5">
+            {% if code %}
+                <div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">Code</th>
+                            <th scope="col">Available</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>{{ code.user.username }}</td>
+                            <td>{{ code.code }}</td>
+                            {% if code.used %}
+                                <td>No</td>
+                            {% else %}
+                                <td>Yes</td>
+                                <td><a class="button-style" href="{% url 'score:flag_code_to_used' code.id %}">Use
+                                    Code</a></td>
+                            {% endif %}
+
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    {% else %}
+                    <h3 class="heading-red">Code is invalid</h3>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

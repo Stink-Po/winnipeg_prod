@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block title %} Winni Furance | Blog : {{ offer.title }}{% endblock %}
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li><a href="{% url 'offers:view_offers' %}">Offers</a></li>
+            </ol>
+            <h2>{{ offer.title }}</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="entries">
+                    <article class="entry entry-single">
+                        
+                        <div class="entry-img justify-content-center">
+                            <img src="{{ offer.image.url }}" alt="{{ offer.slug }}" class="img-fluid mx-auto">
+                            <h1>test</h1>
+                        </div>
+
+                        <h2 class="entry-title">
+                           {{ offer.title }}
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> 
+                                    {%  if  offer.available_till %}
+                                    <time datetime="2020-01-01">Available to : {{ offer.available_till }}</time>
+                                    {% else %}
+                                    <time datetime="2020-01-01">Always Available</time>
+                                    {% endif %}
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                {{ offer.description }}
+                            </p>
+
+                            
+                        </div>
+
+                    </article><!-- End blog entry -->
+                
+
+                </div><!-- End blog entries list -->
+
+            </div>
+
+        </div>
+    </section><!-- End Blog Single Section -->
+
+{% endblock %}
+    

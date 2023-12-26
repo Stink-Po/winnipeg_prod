@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Winni Furance | Not Email Found{% endblock %}
+{% block content %}
+
+    <section class="contact">
+        <div class="container" style="height: 300px">
+
+            <div class="section-title">
+                <h2 data-aos="fade-up">Sorry We Don't have  any Recorded  data For this Email</h2>
+                <p data-aos="fade-up"></p>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-9 col-lg-12 mt-4">
+                    <p class="text-center">Check your email and try again<a href="{% url 'accounts:password_reset' %}"> here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

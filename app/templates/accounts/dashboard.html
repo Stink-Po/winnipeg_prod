@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Winni Furnace | Dashboard{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="user dashboard for Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, user account, dashboard">
+    <meta property="og:title" content="Winni Furnace | Dashboard">
+    <meta property="og:description" content="user dashboard">
+    <meta property="og:url" content="{% url 'accounts:dashboard' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <h1>Dashboard</h1>
+    <p>Hello {{ user.first_name }}</p>
+    <p>Your Current Score is {{ user.score }}</p>
+    <a href="{% url 'accounts:confirm_delete_account' %}">Delete Account</a>
+    <p><a href="{% url "accounts:edit_account_information" %}">Edit account information</a></p>
+    <p><a href="{% url 'accounts:password_change' %}">Change Password</a></p>
+
+    {% if  not user.is_staff %}
+        <h2>Your Ordered Services : </h2>
+        {% if user_services %}
+            <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Service Name</th>
+                <th scope="col">Order Time</th>
+                <th scope="col">Finish Time</th>
+                <th scope="col">Score gained</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for service in user_services %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ service.get_service_display }}</td>
+                    <td>{{ service.order_time }}</td>
+                    {% if service.finished %}
+                        <td>{{ service.finished_time }}</td>
+                        <td><span class="text-success"> + 10 </span></td>
+                    {% else %}
+                        <td>In process</td>
+                        <td> -</td>
+                        <td><a href="{% url 'services:cancel_order' order_id=service.id %}">Cancel</a></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+        {% else %}
+            <p>You haven't ordered any services yet.</p>
+        {% endif %}
+    {% else %}
+        {% if all_services %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Order Time</th>
+                    <th scope="col">Flag Finished</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for service in all_services %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ service.get_service_display }}</td>
+                        <td>{{ service.name }}</td>
+                        <td>{{ service.email }}</td>
+                        <td>{{ service.phone }}</td>
+                        <td>{{ service.order_time }}</td>
+                        <td><a href="{% url 'services:finish_order' order_id=service.id %}">Set</a></td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endif %}
+{% endblock %}

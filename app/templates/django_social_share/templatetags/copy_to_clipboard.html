@@ -1,0 +1,26 @@
+<div class="copy-this">
+    <a href="#" data-copy-btn="buttonCopy" data-copy-url="{{ copy_url }}" class="{{ link_class }}"><i class="fa-solid fa-copy fa-2xl"></i></a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const copyButtons = document.querySelectorAll('[data-copy-btn]');
+
+        copyButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                // Your copy logic here
+                const copyUrl = button.getAttribute('data-copy-url');
+                // Implement your logic to copy 'copyUrl'
+
+                // For example, using the Clipboard API:
+                navigator.clipboard.writeText(copyUrl).then(function() {
+                    console.log('URL copied successfully!');
+                }).catch(function(err) {
+                    console.error('Unable to copy URL', err);
+                });
+            });
+        });
+    });
+</script>

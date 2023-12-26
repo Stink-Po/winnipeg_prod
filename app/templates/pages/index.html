@@ -1,0 +1,410 @@
+{% extends 'base.html' %}
+{% load offers_tags %}
+{% block title %}Winni-Furance | Heating & Cooling Services in Winnipeg, Manitoba{% endblock %}
+{% block meta_tags %}
+{% endblock %}
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="container" data-aos="fade-in">
+            <h1>Welcome to Winni Furance</h1>
+            <h2 class="heading-color">Heating & Colling</h2>
+            <div class="d-flex align-items-center">
+                <i class="bx bxs-right-arrow-alt get-started-icon"></i>
+                <a href="{% url 'services:order' %}" class="btn-get-started scrollto">Book A Preprofessional Service
+                    Now</a>
+            </div>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+                        <div class="content">
+                            <h3>Why Choose Winni-furance for your company or your home?</h3>
+                            <p>
+                                Join our community of valued website members and unlock a special privilege – a 10%
+                                discount on all our services! As a token of our appreciation for your trust and loyalty,
+                                we're thrilled to offer this exclusive deal. Whether it's professional duct cleaning,
+                                furnace installation, repair, or any of our top-notch services, your membership brings
+                                added savings. Experience premium service at a discounted rate as we prioritize your
+                                comfort and satisfaction. Join us today and indulge in the perks of being a cherished
+                                member of our community!
+                            </p>
+
+                            <div class="text-center">
+                                {% if user.is_authenticated %}
+                                    <a href="{% url "services:order" %}" class="more-btn">Book a Service <i
+                                            class="bx bx-chevron-right"></i></a>
+
+                                {% else %}
+                                    <a href="{% url "accounts:signup" %}" class="more-btn">Join Us<i
+                                            class="bx bx-chevron-right"></i></a>
+                                {% endif %}
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7 d-flex">
+                        <div class="icon-boxes d-flex flex-column justify-content-center">
+                            <div class="row">
+                                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up"
+                                     data-aos-delay="100">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-receipt"></i>
+                                        <h4>Expertise in Air Duct and Vent Cleaning</h4>
+                                        <p>Our certified professionals specialize in thorough air duct and vent
+                                            cleaning, optimizing HVAC system performance</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up"
+                                     data-aos-delay="200">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-cube-alt"></i>
+                                        <h4>Furnace Installation Experts</h4>
+                                        <p>Trust our proven track record for expert and swift furnace installations
+                                            using cutting-edge tools and techniques</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up"
+                                     data-aos-delay="300">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-images"></i>
+                                        <h4>Customer-Centric Solutions</h4>
+                                        <p>Tailored services to meet your unique needs, whether it's duct cleaning or
+                                            furnace installation. Experience transparent pricing and open communication
+                                            for a hassle-free process</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about section-bg">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative"
+                         data-aos="fade-right">
+
+                    </div>
+
+                    <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                        <h4 data-aos="fade-up">About us</h4>
+                        <h3 data-aos="fade-up">Your Comfort, Our Expertise
+                            Your Trusted Partner for Clean Air and Efficient Heating Solutions</h3>
+                        <p data-aos="fade-up">Winni-Furance, your local expert in Winnipeg, Manitoba, dedicated to
+                            ensuring your comfort through top-notch air duct and vent cleaning services and efficient
+                            furnace installations</p>
+
+                        <div class="icon-box" data-aos="fade-up">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <h4 class="title"><a href="">Local Expertise</a></h4>
+                            <p class="description">Our team understands the unique needs of Winnipeg's climate,
+                                providing tailored solutions for homes and businesses</p>
+                        </div>
+
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+                            <h4 class="title"><a href="">Community-Focused Approach</a></h4>
+                            <p class="description">Active participation in local initiatives, contributing to the
+                                well-being of our neighbors</p>
+                        </div>
+
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="fa-solid fa-toolbox"></i></div>
+                            <h4 class="title"><a href="">Skilled Professionals</a></h4>
+                            <p class="description">Certified experts committed to excellence in air duct cleaning and
+                                precise furnace installations</p>
+                        </div>
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="fa-solid fa-microchip"></i></div>
+                            <h4 class="title"><a href="">Advanced Technology</a></h4>
+                            <p class="description">Cutting-edge tools and technology for effective and modern
+                                solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Clients Section ======= -->
+
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+            {% include 'services/order_form.html' %}
+            <div class="container">
+
+                {% include "pages/services_list.html" %}
+
+            </div>
+        </section><!-- End Services Section -->
+
+        <!-- ======= Values Section ======= -->
+        <section id="values" class="values">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                        <div class="card"
+                             style="background-image: url(static/img/business-strategy-success-target-goals.jpg);">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Mission</a></h5>
+                                <p class="card-text">Ensuring your well-being by providing unparalleled air duct and
+                                    vent cleaning services and furnace installations, contributing to a healthier and
+                                    more comfortable living environment.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up"
+                         data-aos-delay="100">
+                        <div class="card"
+                             style="background-image: url(static/img/close-up-worktable-with-reports-plans.jpg);">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Plan</a></h5>
+                                <p class="card-text">Executing a meticulous approach to every project, utilizing
+                                    cutting-edge technology and industry expertise to deliver efficient, reliable, and
+                                    sustainable solutions for clean air and effective heating.</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card" style="background-image: url(static/img/1920-Vision_Mission.jpeg);">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Vision</a></h5>
+                                <p class="card-text">Pioneering the future of indoor air quality and heating solutions
+                                    in Winnipeg, Manitoba, by continually innovating, fostering community well-being,
+                                    and being the go-to choice for those seeking excellence in clean air and heating
+                                    services</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card" style="background-image: url(static/img/values-4.jpg);">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Care</a></h5>
+                                <p class="card-text">Dedicated to the community and our clients, we prioritize your
+                                    satisfaction through transparent communication, personalized services, and a
+                                    commitment to the highest standards of care in every aspect of our work.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Values Section -->
+    <h3 class="heading-red text-center p-5">Available Offers</h3>
+    <section id="testimonials" class="testimonials">
+        
+        {% show_latest_offers %}
+    </section>
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2 data-aos="fade-up">Our Projects</h2>
+                    <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid
+                        fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
+                        impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">All</li>
+                            <li data-filter=".filter-DC">Duct Cleaning</li>
+                            <li data-filter=".filter-FI">Furnace Installation</li>
+                            <li data-filter=".filter-FR">Furnace Repair</li>
+                            <li data-filter=".filter-FC">Furnace Cleaning</li>
+                            <li data-filter=".filter-AI">Air Conditioner Installation</li>
+                            <li data-filter=".filter-AR">Air Conditioner Tune Up</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    {% for project in projects %}
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.title }}">
+                            <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title.value }}">
+                            <div class="portfolio-info">
+                                <h4>{{ project.get_friendly_title }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Section -->
+
+
+        <!-- ======= F.A.Q Section ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2 data-aos="fade-up">F.A.Q : Learn More About Our Services</h2>
+                    <p data-aos="fade-up">Discover in-depth insights into our services and procedures through our
+                        Frequently Asked Questions (FAQ) section. Get clarity on air duct and vent cleaning, furnace
+                        installations, and more. Your journey to a healthier, more comfortable living space starts with
+                        the information provided here.
+
+                        If you have additional questions or need further assistance, feel free to reach out! Call us,
+                        send an email, or use our convenient Contact Us form. We're here to answer your questions
+                        promptly and ensure you have the information you need for a seamless experience with
+                        Winni-Furance.</p>
+                </div>
+
+                <div class="faq-list">
+                    <ul>
+                        <li data-aos="fade-up">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                                                                           data-bs-target="#faq-list-1">How often should
+                            I have my air ducts and vents cleaned?<i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                <p>
+                                    We recommend getting your air ducts and vents cleaned every 1 to 3 years. However,
+                                    if you have specific concerns like allergies, recent renovations, or visible mold
+                                    growth, more frequent cleaning may be advisable
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-2"
+                                                                           class="collapsed">Why is professional air
+                            duct cleaning important<i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Professional cleaning ensures the removal of accumulated dust, debris, and
+                                    contaminants in your ductwork, improving indoor air quality, and promoting a
+                                    healthier living environment. DIY cleaning methods often fall short of achieving
+                                    thorough results.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-3"
+                                                                           class="collapsed">What sets Winni-Furance
+                            apart in furnace installations?<i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Winni-Furance stands out for its skilled professionals, advanced technology, and a
+                                    commitment to precision. We prioritize efficient and reliable furnace installations,
+                                    ensuring optimal performance and longevity.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-4"
+                                                                           class="collapsed">How long does a furnace
+                            installation typically take?<i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    The duration of a furnace installation varies based on factors such as the type of
+                                    furnace, the complexity of the installation, and the size of the space. Our team
+                                    strives to complete installations efficiently, typically within a day.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-5"
+                                                                           class="collapsed"> Do you offer emergency
+                            services for furnace issues?<i
+                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Yes, we understand that furnace issues can arise unexpectedly. Winni-Furance
+                                    provides emergency services to address urgent heating needs. Contact our hotline,
+                                    and we'll prioritize your situation promptly.
+                                </p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-5"
+                                                                           class="collapsed">Are your services available
+                            throughout Winnipeg, Manitoba?<i
+                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Absolutely! Winni-Furance proudly serves the entire Winnipeg, Manitoba area. Whether
+                                    you're in the heart of downtown or the outskirts, our team is ready to bring our
+                                    expertise to your doorstep.
+                                </p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-5"
+                                                                           class="collapsed"> How do I know if my air
+                            ducts need cleaning?<i
+                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Signs that your air ducts may need cleaning include visible mold growth, an increase
+                                    in dust around the home, unusual odors, and a decline in indoor air quality. If
+                                    you're unsure, our professionals can assess and recommend the best course of action.
+                                </p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                                                           data-bs-target="#faq-list-5"
+                                                                           class="collapsed">Is your pricing
+                            transparent, and are there hidden fees?<i
+                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    At Winni-Furance, we believe in transparency. Our pricing is clear, and there are no
+                                    hidden fees. We provide detailed estimates before starting any work, ensuring you
+                                    know exactly what to expect.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section><!-- End F.A.Q Section -->
+        <!-- ======= Contact Section ======= -->
+
+        {% include 'messages_app/message_form.html' %}
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+{% endblock %}
+<!-- Vendor JS Files -->

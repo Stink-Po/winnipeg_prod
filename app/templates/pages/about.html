@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% block meta_tags %}
+    <meta name="description"
+          content="Winni-Furance is your trusted partner for HVAC services in Winnipeg, Manitoba. We specialize in duct cleaning, furnace installation, repair, and cleaning, as well as air conditioner installation and repair. Affordable and reliable solutions for your comfort.">
+    <meta name="keywords"
+          content="Winni Furance, HVAC services, heating, ventilation, air conditioning, Winnipeg, Manitoba, duct cleaning, furnace installation, furnace repair, furnace cleaning, air conditioner installation, air conditioner repair, affordable HVAC, reliable HVAC, clean air, energy-efficient HVAC">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | About Winni Furance HVAC Services in Winnipeg, Manitoba">
+    <meta property="og:description"
+          content="Winni-Furance is your trusted partner for HVAC services in Winnipeg, Manitoba. We specialize in duct cleaning, furnace installation, repair, and cleaning, as well as air conditioner installation and repair. Affordable and reliable solutions for your comfort.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% url "pages:about" %}">
+    <!-- Add the actual path to your image -->
+    <meta property="og:image:alt" content="Winni Furance Logo">
+{% endblock %}
+{% block title %}Winni Furance | About Winni Furance HVAC Services in Winnipeg, Manitoba{% endblock %}
+{% block content %}
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url "pages:index" %}">Home</a></li>
+                <li>About us</li>
+            </ol>
+            <h2>About Winni-Furance</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <section>
+
+        <div class="container p-5">
+
+            <div class="row p-5">
+
+                <div>
+
+                    <h1 class="heading-red p-lg-5" data-aos="fade-up" style="display: inline"><i
+                            class="fa-solid fa-people-roof"></i> About us</h1>
+                </div>
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3 data-aos="fade-up">Your Comfort, Our Expertise
+                        Your Trusted Partner for Clean Air and Efficient Heating Solutions in Winnipeg</h3>
+                    <p data-aos="fade-up">Welcome to Winni-Furance – Elevating Comfort, Enhancing Lives
+                        At Winni-Furance, we believe that comfort extends beyond temperature control. It's about
+                        creating spaces where families thrive, businesses flourish, and memories are made. Founded in
+                        the heart of Winnipeg, Manitoba, we have been dedicated to redefining HVAC services with a focus
+                        on excellence, innovation, and community connection.</p>
+                </div>
+                <div class="col-xl-5 col-lg-6 service-box d-flex justify-content-center align-items-stretch position-relative"
+                     data-aos="fade-right">
+
+                </div>
+            </div>
+            <div class="row p-5">
+                <div class="col-xl-5 col-lg-6 our_story_box d-flex justify-content-center align-items-stretch position-relative"
+                     data-aos="fade-right">
+
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                    <h4 class="p-3" data-aos="fade-up"><i class="fa-solid fa-book-open-reader fa-2xl text-danger"></i>
+                    </h4>
+                    <h3 data-aos="fade-up">Our Story</h3>
+                    <p data-aos="fade-up">In the chilly winters and warm summers of Winnipeg, the need for reliable
+                        heating, ventilation, and air conditioning is paramount. Our journey began with the vision of
+                        providing comprehensive HVAC solutions that not only meet technical requirements but also exceed
+                        expectations in customer satisfaction.</p>
+                </div>
+
+            </div>
+            <div class="row p-5">
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                    <h4 class="p-3" data-aos="fade-up"><i
+                            class="fa-solid fa-hands-holding-circle fa-2xl text-danger"></i>
+                    </h4>
+                    <h3 data-aos="fade-up">Our Values</h3>
+                    <ul data-aos="fade-up">
+                        <li>
+                            <p><strong class="heading-red">Excellence</strong></p>
+                            <p>We are committed to delivering excellence in every service we provide. Our team comprises
+                                skilled professionals who undergo continuous training to stay at the forefront of
+                                industry advancements.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Integrity</strong></p>
+                            <p>Honest and transparent communication is at the core of our interactions. We believe in
+                                building lasting relationships with our clients based on trust and integrity.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Innovation</strong></p>
+                            <p>The HVAC industry is dynamic, and we embrace innovation. By incorporating cutting-edge
+                                technology, we ensure that your systems are efficient, reliable, and energy-saving.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Community</strong></p>
+                            <p>As a local business, we understand the unique needs of the Winnipeg community. We are
+                                not just service providers; we are neighbors committed to enhancing the quality of life
+                                in our city.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-5 col-lg-6 our_values_box d-flex justify-content-center align-items-stretch position-relative"
+                     data-aos="fade-right">
+
+                </div>
+
+            </div>
+            <div class="row p-5">
+                <div class="col-xl-5 col-lg-6 apart_box d-flex justify-content-center align-items-stretch position-relative"
+                     data-aos="fade-right">
+
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                    <h4 class="p-3" data-aos="fade-up"><i class="fa-solid fa-ranking-star fa-2xl text-danger"></i>
+                    </h4>
+                    <h3 data-aos="fade-up">What Sets Us Apart</h3>
+                    <ul data-aos="fade-up">
+                        <li>
+                            <p><strong class="heading-red">Customer-Centric Approach</strong></p>
+                            <p>Your satisfaction is our priority. From the moment you contact us to the completion of
+                                the job, we are dedicated to ensuring a positive and hassle-free experience.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Customized Solutions</strong></p>
+                            <p>We recognize that every home and business is unique. Our solutions are tailored to your
+                                specific needs, ensuring optimal performance and efficiency.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Sustainable Practices</strong></p>
+                            <p>We are committed to environmental responsibility. Our services focus on energy
+                                efficiency, helping you reduce your carbon footprint while enjoying comfortable indoor
+                                spaces.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">24/7 Emergency Services</strong></p>
+                            <p>HVAC emergencies can happen at any time. Our team is available around the clock to
+                                address urgent issues, providing peace of mind to our clients.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row p-5 border-1 border-black">
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                    <h4 class="p-3" data-aos="fade-up"><i class="fa-solid fa-screwdriver-wrench fa-2xl text-danger"></i>
+                    </h4>
+                    <h3 data-aos="fade-up">Our Services</h3>
+                    <p data-aos="fade-up">Winni-Furance offers a comprehensive range of HVAC services, including:</p>
+                    <ul data-aos="fade-up">
+                        <li>
+                            <p><strong class="heading-red">Professional Duct Cleaning</strong></p>
+                            <p>Breathe cleaner air and boost your health.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Furnace Installation</strong></p>
+                            <p>Reliable warmth, expertly installed.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Furnace Repair</strong></p>
+                            <p>Swift fixes for restored warmth.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Furnace Cleaning</strong></p>
+                            <p>Efficiency restored, energy saved.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Air Conditioner Installation</strong></p>
+                            <p>Cool comfort, installed with care.</p>
+                        </li>
+                        <li>
+                            <p><strong class="heading-red">Air Conditioner Tune Up (Repair)</strong></p>
+                            <p>Peak performance for cool and efficient operation.</p>
+                        </li>
+                    </ul>
+                    <p data-aos="fade-up">Join us in the pursuit of ultimate comfort. At Winni-Furance, we don't just
+                        provide services; we create environments where the moments that matter unfold. Thank you for
+                        considering us as your HVAC partner in Winnipeg, Manitoba.
+
+                        For inquiries, appointments, or emergency services, contact Winni-Furance today. Your comfort is
+                        our business, and we look forward to exceeding your expectations.</p>
+                </div>
+                <div class="col-xl-5 col-lg-6 our_servie_box d-flex justify-content-center align-items-stretch position-relative"
+                     data-aos="fade-right">
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section><!-- End About Section -->
+{% endblock %}

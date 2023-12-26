@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block title %} Winni Furance | Blog {% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="winni furnace blog posts">
+    <meta name="keywords" content="Winni Furnace,  post, weblog, new post, duct cleaning">
+    <meta property="og:title" content="Winni Furnace | Blog">
+    <meta property="og:description" content="winni furnace blog posts">
+    <meta property="og:url" content="{% url 'blog:post_list' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li>Blog</li>
+            </ol>
+            <h2>Blog</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-8 entries">
+                {% if post %}
+                    {% for post in posts %}
+                        <article class="entry">
+
+                            <div class="entry-img">
+                                <img src="{{ post.image.url }}" alt="" class="img-fluid">
+                            </div>
+
+                            <h2 class="entry-title">
+                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                            </h2>
+
+                            <div class="entry-meta">
+                                <ul>
+                                    <li>
+                                        <time>{{ post.created }}</time>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a
+                                            href="{{ post.get_absolute_url }}"></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="entry-content">
+                                <p>
+                                    {{ post.body|truncatewords:30|linebreaks }}
+                                </p>
+                                <div class="read-more">
+                                    <a href="{{ post.get_absolute_url }}">Read More</a>
+                                </div>
+                            </div>
+
+                        </article><!-- End blog entry -->
+                    {% endfor %}
+                    {% include "pagination.html" with page=posts %}
+                {% else %}
+                <article class="entry">
+                    <h2 class="entry-title">No Posts</h2>
+                </article>
+                {% endif %}
+
+                </div><!-- End blog entries list -->
+
+                <div class="col-lg-4">
+
+                    <div class="sidebar">
+
+                        <h3 class="sidebar-title">Search</h3>
+                        <div class="sidebar-item search-form">
+                            <form action="" method="get">
+                                <input type="text" name="{{ form.query.name }}" class="form-control"
+                                       id="{{ form.query.id_for_label }}" placeholder="" required>
+                                <button type="submit"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div><!-- End sidebar search formn-->
+
+                        {% show_latest_posts 3 %}
+
+                        <h3 class="sidebar-title">Tags</h3>
+                        <div class="sidebar-item tags">
+                            {% if tag %}
+                            <ul>
+                                {% for tag in all_tags %}
+                                    <li><a href="{% url "blog:post_list_by_tag" tag.slug %}">{{ tag }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div><!-- End sidebar tags-->
+
+                    </div><!-- End sidebar -->
+
+                </div><!-- End blog sidebar -->
+
+            </div>
+
+        </div>
+    </section><!-- End Blog Section -->
+
+{% endblock %}

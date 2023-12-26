@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_tags %}
+    <title>{% block title %}Winni Furance | Expert Air Conditioner Tune-Up and Repair Services in Winnipeg, Manitoba{% endblock %}</title>
+    <meta name="description" content="Ensure your air conditioner operates at peak performance with professional tune-up and repair services from Winni-Furance. Our certified technicians specialize in comprehensive maintenance and efficient repairs to keep your cooling system running smoothly. Contact us for expert air conditioner services in Winnipeg.">
+    <meta name="keywords" content="Winni Furance, air conditioner tune-up, air conditioner repair, AC maintenance, expert services, Winnipeg, Manitoba, thorough inspection, cleaning, lubrication, identification and repair, benefits of tune-up, expert repair services, choose Winni-Furance, schedule your tune-up and repair">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | Expert Air Conditioner Tune-Up and Repair Services in Winnipeg, Manitoba">
+    <meta property="og:description" content="Ensure your air conditioner operates at peak performance with professional tune-up and repair services from Winni-Furance. Our certified technicians specialize in comprehensive maintenance and efficient repairs to keep your cooling system running smoothly. Contact us for expert air conditioner services in Winnipeg.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{% url 'pages:air_conditioner_tune_up' %}">
+    <meta property="og:image" content="{% static 'img/Air-Conditioner-Tune-Up.jpg' %}"> <!-- Add the actual path to your image -->
+    <meta property="og:image:alt" content="Air Conditioner Tune-Up and Repair">
+
+{% endblock %}
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li>Services</li>
+                </ol>
+                <h2>Professional Air Conditioner Tune-Up and Repair in Winnipeg</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <section class="inner-page pt-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Left column with image -->
+                    <div class="col-md-6">
+                        <img src="{% static 'img/Air-Conditioner-Tune-Up.jpg' %}" class="img-fluid" alt="Air Conditioner Tune-Up and Repair">
+                    </div>
+
+                    <!-- Right column with text -->
+                    <div class="col-md-6">
+                        <div class="p-4">
+                            <h2 class="entry-title pt-5 pb-3 heading-red">
+                                Expert Air Conditioner Tune-Up and Repair Services in Winnipeg
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-5">
+
+                <div class="entries">
+
+                    <article class="entry entry-single">
+
+                        <div class="entry-content">
+                            <p>
+                                Ensure your air conditioner operates at peak performance with professional tune-up and
+                                repair services from Winni-Furance. Our certified technicians specialize in
+                                comprehensive maintenance and efficient repairs to keep your cooling system running
+                                smoothly.
+                            </p>
+
+                            <blockquote>
+                                <p>
+                                    Our expert services include:
+                                </p>
+                            </blockquote>
+                            <ul>
+                                <li>Thorough air conditioner inspection and diagnostics</li>
+                                <li>Cleaning and lubrication of essential components</li>
+                                <li>Identification and repair of potential issues</li>
+                            </ul>
+
+                            <h3 class="heading-red">Benefits of Air Conditioner Tune-Up</h3>
+                            <p>
+                                Regular tune-ups not only enhance the performance of your air conditioner but also
+                                contribute to energy efficiency, lower utility bills, and an extended system lifespan.
+                                Winni-Furance ensures your cooling system is in top condition for the upcoming
+                                seasons.
+                            </p>
+
+                            <h3 class="heading-red">Expert Repair Services</h3>
+                            <p>
+                                If your air conditioner is experiencing issues, our certified technicians are equipped
+                                to handle repairs with precision. From refrigerant leaks to electrical problems, trust
+                                Winni-Furance for reliable and efficient air conditioner repairs in Winnipeg and
+                                nearby areas.
+                            </p>
+
+                            <h3 class="heading-red">Why Choose Winni-Furance for Tune-Up and Repair?</h3>
+                            <p>
+                                We prioritize the satisfaction of our customers and strive to deliver quality services
+                                that ensure the longevity and efficiency of your cooling system. Our team is committed
+                                to providing expert advice, timely services, and transparent communication throughout
+                                the tune-up and repair process.
+                            </p>
+
+                            <h3 class="heading-red">Schedule Your Tune-Up and Repair Today</h3>
+                            <p>
+                                Don't wait until your air conditioner breaks down. Schedule a professional tune-up and
+                                repair with Winni-Furance to ensure your cooling system operates reliably and
+                                efficiently. Contact us today to book your appointment in Winnipeg and the surrounding
+                                areas.
+                            </p>
+
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                </div><!-- End blog entries list -->
+            </div>
+            {% include 'services/order_form.html' %}
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

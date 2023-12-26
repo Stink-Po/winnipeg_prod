@@ -1,0 +1,117 @@
+{% load static %}
+<section>
+<h4 class="text-center pb-5 heading-red" data-aos="fade-up">Book A Service</h4>
+    <div class="container">
+        <div class="row p-5">
+            <!-- First column with image -->
+
+
+            <!-- Second column with text -->
+            <div class="col-md-6">
+                <div class="text-container">
+                    <div class=""
+                         data-aos="fade-left">
+                        <h3 data-aos="fade-up">Book a Professional Service in Winnipeg with Winni-Furance Heating & Colling</h3>
+                        <p data-aos="fade-up">Winni-Furance, your local expert in Winnipeg, Manitoba, dedicated to
+                            ensuring your comfort through top-notch air duct and vent cleaning services and efficient
+                            furnace installations in winnipeg</p>
+                        {% if user.is_authenticated %}
+                            <form action="{% url "services:order" %}" method="post" role="form">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="form-group  mt-3 p-2">
+                                <span class="pt-5 pb-5">Choice a Service</span>
+                                        {{ service_form.service }}
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    {{ service_form.message.label_tag }}
+                                    <textarea class="form-control" name="{{ service_form.message.name }}"
+                                              rows="5"
+                                              placeholder="Enter Your Message ( Optional )"></textarea>
+                                </div>
+                                <div class="text-center p-1">
+                                    <button class="button-style" type="submit">Next</button>
+                                </div>
+                            </form>
+                        {% else %}
+                            <p>Before Your order a Services You can Join our community of valued website members and
+                                unlock a special privilege – a 10% <strong>discount</strong> on all our services! As a
+                                token
+                                of
+                                our
+                                appreciation for your trust and loyalty, we're thrilled to offer this exclusive
+                                deal. Whether it's professional duct cleaning, furnace installation, repair, or any
+                                of our top-notch services, your membership brings added savings. Experience premium
+                                service at a discounted rate as we prioritize your comfort and satisfaction. Join us
+                                today and indulge in the perks of being a cherished member of our community! </p>
+                            <div class="text-center">
+                                <a href="{% url "accounts:signup" %}" class="more-btn">Join Us <i
+                                        class="bx bx-chevron-right"></i></a>
+                            </div>
+                            <form action="{% url "services:order" %}" method="post" role="form" class="p-3">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="form-group  mt-3 p-2">
+                                        Choice a Service
+                                        {{ service_form.service }}
+                                    </div>
+                                    <div class="form-group mt-3 p-2">
+                                        {{ service_form.name.label_tag }}
+                                        <input type="text" name="{{ service_form.name.name }}"
+                                               class="form-control"
+                                               id="{{ service_form.name.id_for_label }}"
+                                               placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6 form-group p-2">
+                                        {{ service_form.email.label_tag }}
+                                        <input type="email" name="{{ service_form.email.name }}"
+                                               class="form-control"
+                                               id="{{ service_form.email.id_for_label }}"
+                                               placeholder="Your Email Adress" required>
+                                    </div>
+                                    <div class="col-md-6 form-group p-2">
+                                        {{ service_form.phone.label_tag }}
+                                        <input type="text" name="{{ service_form.phone.name }}"
+                                               class="form-control"
+                                               id="{{ service_form.phone.id_for_label }}"
+                                               placeholder="Your Phone Number" required>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        {{ service_form.message.label_tag }}
+                                        <textarea class="form-control" name="{{ service_form.message.name }}"
+                                                  rows="5"
+                                                  placeholder="Enter Your Message ( Optional )"></textarea>
+                                    </div>
+                                </div>
+
+
+                                <div class="text-center p-2">
+                                    <button class="button-style" type="submit">Next</button>
+                                </div>
+                            </form>
+                            {% if form.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>Error:</strong> Please correct the following issues:
+                                    <ul>
+                                        {% for field, errors in form.errors.items %}
+                                            {% for error in errors %}
+                                                <li>{{ field }}: {{ error }}</li>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container my-auto" data-aos="fade-left">
+                    <img src="{% static 'img/book-service.jpg' %}" class="img-fluid image_container pt-5" alt="services Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

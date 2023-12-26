@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_tags %}
+    <meta name="description" content="Winni-Furance provides professional furnace installation services in Winnipeg and surrounding areas. Upgrade your home comfort with efficient and reliable furnace installation by certified HVAC technicians. Explore a range of high-quality furnace systems tailored to your needs and budget. Contact us for expert advice, discounts, and financing options.">
+    <meta name="keywords" content="Winni Furance, furnace installation, heating system, energy-efficient furnace, HVAC technicians, Winnipeg, Manitoba, certified technicians, home comfort, discounts, financing options, furnace size, heating load calculation">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | Professional Furnace Installation Services in Winnipeg, Manitoba">
+    <meta property="og:description" content="Winni-Furance provides professional furnace installation services in Winnipeg and surrounding areas. Upgrade your home comfort with efficient and reliable furnace installation by certified HVAC technicians. Explore a range of high-quality furnace systems tailored to your needs and budget. Contact us for expert advice, discounts, and financing options.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{% url 'pages:furnace_installation' %}">
+    <meta property="og:image" content="{% static 'img/FR_install.jpg' %}"> <!-- Add the actual path to your image -->
+    <meta property="og:image:alt" content="Furnace Installation">
+
+{% endblock %}
+{% block title %}Winni Furance | ProfessionalFurnace Installation Services in Winnipeg Manitoba{% endblock %}
+
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li>Services</li>
+                </ol>
+                <h2>Furnace Installation</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <section class="inner-page pt-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Left column with image -->
+                    <div class="col-md-6">
+                        <img src="{% static 'img/FR_install.jpg' %}" class="img-fluid" alt="Furnace Installation image">
+                    </div>
+
+                    <!-- Right column with text -->
+                    <div class="col-md-6">
+                        <div class="p-4">
+                            <h2 class="entry-title pt-5 pb-3 heading-red">
+                            Furnace Installation Winnipeg
+                        </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-5">
+
+                <div class="entries">
+
+                    <article class="entry entry-single">
+                        
+                        <div class="entry-content">
+                            <p>
+                                The cold temperature in Winnipeg necessitates a heating system that not only keeps you
+                                warm but also uses less energy than necessary. Luckily, if you’re looking to upgrade
+                                your home comfort, the team at Winni-furance
+                                is here to help
+                                you navigate the process of choosing the suitable unit for your home from start to
+                                finish!
+                            </p>
+
+                            <p>
+                                We offer an extensive selection of high-quality furnace systems that we can tailor to
+                                your unique needs and budget as a homeowner!
+                            </p>
+                            <blockquote>
+                                <p class="heading-red">
+                                    Efficient and Reliable Furnace Installation in Winnipeg :
+                                </p>
+                            </blockquote>
+                            <ul>
+                                <li>Winni-furance has been proudly providing Winnipeg and the surrounding areas with
+                                    dependable heating and cooling services
+                                </li>
+                                <li>From quick and simple repairs to a full setup and installation of a brand-new
+                                    system, we’re here to help you make your home feel just right.
+                                </li>
+                                <li>Our certified HVAC technicians are here to help, no matter the time of year – we
+                                    offer full service throughout the Winnipeg area. We are always available outside of
+                                    traditional working hours and even on holidays at no extra charge.
+                                </li>
+                            </ul>
+
+                            <p>
+                                Even better, if you’re in the market for a new furnace system, ask us how you can save
+                                with our incredible discounts and financing options! Homeowners in Winnipeg will also
+                                receive a complimentary new system purchase estimate from a home comfort advisor during
+                                their at-home consultation appointment!
+                            </p>
+                            <h3 class="heading-red">
+                                What Size Should Your New Furnace Be?
+                            </h3>
+                            <p>
+                                One of the first steps in a combustion furnace installation is determining what size it
+                                should be for your home. A poor installation technician will base the recommended
+                                capacity of a new furnace solely on the square footage of the house. Actually, this is a
+                                great way to heighten the prospects of getting the wrong furnace in your home, with all
+                                the accompanying problems in operation, efficiency and even safety.
+
+                                Instead, quality professional maintenance absolutely needs a careful calculation of the
+                                heating load in your home, in other words, the amount of heat that’s needed to make it
+                                feel comfortable. This calculation is based on much more than just the size of your
+                                home; among other things, it also takes into account the house’s energy efficiency,
+                                which includes the amount, type and location of insulation, the air tightness of the
+                                house, the type and amount of windows, and more.
+                            </p>
+
+
+                        </div>
+
+
+                    </article><!-- End blog entry -->
+
+
+                </div><!-- End blog entries list -->
+            </div>
+             {% include 'services/order_form.html' %}
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block title %} Winni Furance | Blog Results for : {{ query }} {% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="winni furnace blog posts">
+    <meta name="keywords" content="Winni Furnace,  post, weblog, new post, duct cleaning, search">
+    <meta property="og:title" content="Winni Furnace | Blog Results for : {{ query }}">
+    <meta property="og:description" content="winni furnace blog posts">
+    <meta property="og:url" content="{% url 'blog:post_list' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    {% if results %}
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li><a href="{% url "blog:post_list" %}">Blog</a></li>
+                    <li>Search</li>
+                </ol>
+                <h2>Search Results for {{ query }}</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+
+                    <div class="col-lg-8 entries">
+                        {% for post in results %}
+                            <article class="entry">
+
+                                <div class="entry-img">
+                                    <img src="{{ post.image.url }}" alt="" class="img-fluid">
+                                </div>
+
+                                <h2 class="entry-title">
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                </h2>
+
+                                <div class="entry-meta">
+                                    <ul>
+                                        <time>{{ post.created }}</time>
+                                        </a></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a
+                                                href="{{ post.get_absolute_url }}"></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="entry-content">
+                                    <p>
+                                        {{ post.body|truncatewords:30|linebreaks }}
+                                    </p>
+                                    <div class="read-more">
+                                        <a href="{{ post.get_absolute_url }}">Read More</a>
+                                    </div>
+                                </div>
+
+                            </article><!-- End blog entry -->
+                        {% endfor %}
+                        {% include "pagination.html" with page=results %}
+
+                    </div><!-- End blog entries list -->
+
+                    <div class="col-lg-4">
+
+                        <div class="sidebar">
+
+                            <h3 class="sidebar-title">Search</h3>
+                            <div class="sidebar-item search-form">
+                                <form action="" method="get">
+                                    <input type="text" name="{{ form.query.name }}" class="form-control"
+                                           id="{{ form.query.id_for_label }}" placeholder="" required>
+                                    <button type="submit"><i class="bi bi-search"></i></button>
+                                </form>
+                            </div><!-- End sidebar search formn-->
+
+                            {% show_latest_posts 3 %}
+                            {% if all_tags %}
+                                <h3 class="sidebar-title">Tags</h3>
+                                <div class="sidebar-item tags">
+                                    <ul>
+                                        {% for tag in all_tags %}
+                                            <li><a href="{% url "blog:post_list_by_tag" tag.slug %}">{{ tag }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div><!-- End sidebar tags-->
+                            {% endif %}
+                        </div><!-- End sidebar -->
+
+                    </div><!-- End blog sidebar -->
+
+                </div>
+
+            </div>
+        </section><!-- End Blog Section -->
+    {% else %}
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li><a href="{% url "blog:post_list" %}">Blog</a></li>
+                    <li>Search</li>
+                </ol>
+                <h2>Sorry we didn't find any result for {{ query }}</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <h2>Search again </h2>
+                    <form action="" method="get" class="p-2">
+                        <input type="text" name="{{ form.query.name }}" class="form-control p-1"
+                               id="{{ form.query.id_for_label }}" placeholder="" required>
+                        <div class="pt-2">
+                            <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </section><!-- End Blog Section -->
+    {% endif %}
+{% endblock %}

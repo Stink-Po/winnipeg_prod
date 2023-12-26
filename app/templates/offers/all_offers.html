@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block title %} Winni Furance | Offers {% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="HVAC services in Winnipeg Manitoba our offers">
+    <meta name="keywords" id="keywordsMeta" content="Winni Furnace, HVAC, services, in Winnipeg, Manitoba, winnipeg, offer, offers,">
+    <meta property="og:title" content="Winni Furnace | Offers">
+    <meta property="og:description" content="HVAC services in Winnipeg Manitoba our offers">
+    <meta property="og:url" content="{% url 'offers:view_offers' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <script>
+        let keywords = "";
+        const all_offers = {{ titles|safe }};
+        if (all_offers) {
+            for (let i = 0; i < all_offers.length; i++) {
+                keywords += all_offers[i];
+                console.log(all_offers[i])
+                if (i < all_offers.length - 1) {
+                    keywords += ', ';  // Add a comma between keywords
+                }
+            }
+        }
+
+        // Update the content of the keywords meta tag after the page has loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('keywordsMeta').content = keywords;
+        });
+    </script>
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li>Offers</li>
+            </ol>
+            <h2>All Available Offers</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-12 entries">
+                    {% if available_offers %}
+                        {% for offer in available_offers %}
+                            <article class="entry">
+
+                                <h2 class="entry-title">
+                                    <a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a>
+                                </h2>
+
+                                <div class="entry-meta">
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-hand-holding-dollar text-danger"></i>
+                                            {% if offer.available_till %}
+                                                <time>{{ offer.available_till }}</time>
+                                            {% else %}
+                                                <time>Unlimited offer</time>
+                                            {% endif %}
+                                        </li>
+                                        <li class="d-flex align-items-center"><a
+                                                href="{{ offer.get_absolute_url }}"></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="entry-content">
+                                    <p>
+                                        {{ offer.description|truncatewords:30|linebreaks }}
+                                    </p>
+                                    <div class="read-more">
+                                        <a href="{{ offer.get_absolute_url }}">View Offer</a>
+                                    </div>
+                                </div>
+
+                            </article><!-- End blog entry -->
+                        {% endfor %}
+                    {% else %}
+                        <h2 class="heading-red"><i class="fa-solid fa-face-frown"></i> Sorry No Offer is Available</h2>
+                    {% endif %}
+                </div><!-- End blog entries list -->
+            </div>
+        </div>
+    </section><!-- End Blog Section -->
+{% endblock %}

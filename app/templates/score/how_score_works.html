@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Winni Furance | Score Mechanism{% endblock %}
+{% block meta_tags %}
+    <meta name="description"
+          content="Learn how to earn and use scores on Winni Furnace. Sign up, refer friends, order services, and redeem scores for discounts.">
+    <meta name="keywords" content="Winni Furnace, Score Mechanism, earn scores, use scores, discounts, HVAC services">
+    <meta property="og:title" content="Winni Furnace | Score Mechanism">
+    <meta property="og:description"
+          content="Learn how to earn and use scores on Winni Furnace. Sign up, refer friends, order services, and redeem scores for discounts.">
+    <meta property="og:url" content="{% url 'score:how_score_work' %}">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="{% static 'img/score1.jpg' %}">
+    <!-- Add more meta tags as needed -->
+{% endblock %}
+{% block content %}
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url "pages:index" %}">Home</a></li>
+                <li>Scores</li>
+            </ol>
+            <h2>Winni-Furance Score Mechanism</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="services section-bg">
+
+        <div class="container p-5">
+            <div class="row">
+                <!-- First column with image -->
+
+
+                <!-- Second column with text -->
+                <div class="col-md-6">
+                    <div class="text-container" data-aos="fade-up">
+                        <i
+                                class="fa-solid fa-coins fa-2xl text-danger"></i>
+                        <h3 class="p-lg-3" style="display: inline">How You Can Earn
+                            Scores</h3>
+                        <p class="pb-3 pt-5" data-aos="fade-up">Note : Only registered website members can
+                            earn
+                            scores and
+                            enjoy the benefits.</p>
+                        <ul data-aos="fade-up">
+                            <li>
+                                <p><strong class="heading-red">Sign Up on the Website</strong></p>
+                                <p>Upon signing up on the website and confirming your email address, you will receive
+                                    <strong>+5 Scores</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong class="heading-red">Sign Up with a Referral Invite Link</strong></p>
+                                <p>If you sign up on the website using a referral invite link and confirm your email
+                                    address, you will receive <strong>+10 Scores</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong class="heading-red">Order a Service from the Website</strong></p>
+                                <p>When you order a service from the website, and we complete your order, you will
+                                    receive
+                                    <strong>+10 Scores</strong>.</p>
+                            </li>
+                            <li>
+                                <p><strong class="heading-red">Share Your Unique Referral Link</strong></p>
+                                <p>After confirming your email, you will receive a unique invite link in your dashboard.
+                                    For
+                                    every user who signs up and confirms their email through your link, you will earn
+                                    <strong>+5 Scores</strong>. Share your unique invite link on social media and email
+                                    from
+                                    your dashboard.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 my-auto">
+                    <div class="image-container" data-aos="fade-right">
+                        <img src="{% static 'img/score1.jpg' %}" class="img-fluid" alt="Image">
+                    </div>
+                </div>
+            </div>
+            <div class="row p-5">
+                <div class="col-xl-5 col-lg-6 score_box2 d-flex justify-content-center align-items-stretch position-relative"
+                     data-aos="fade-right">
+
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                    <h4 class="p-3" data-aos="fade-up"><i class="fa-solid fa-percent fa-2xl text-danger"></i>
+                    </h4>
+                    <h3 data-aos="fade-up">How You Can Use Your Scores</h3>
+                    <h5 data-aos="fade-up">Redeem Your Scores for Discount Codes</h5>
+                    <p data-aos="fade-up">Accumulate <strong>100 Scores</strong>, and you can redeem them for a discount
+                        code, providing
+                        you with a <strong>10% Discount</strong> on your next order. Website members enjoy an additional
+                        <strong>10% Discount</strong>.
+                        Once you reach <strong>100 Scores</strong>, you can request a new, unique discount code in your
+                        dashboard.</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section><!-- End About Section -->
+{% endblock %}

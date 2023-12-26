@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Winni Furance | Edit Account Information{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="Edit Account information for Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, user account, dashboard, edit, edit account">
+    <meta property="og:title" content="Winni Furnace | Dashboard">
+    <meta property="og:description" content="user edit account">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2 data-aos="fade-up">Edit Your Information</h2>
+                <p data-aos="fade-up">Use the form below to edit your information</p>
+            </div>
+
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-9 col-lg-12 mt-4">
+                    <form action="" method="post" role="form">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {{ form.non_field_errors|striptags }}
+                            </div>
+                        {% endif %}
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group ">
+                                {{ form.first_name.label_tag }}
+                                <input type="text" name="{{ form.first_name.name }}" class="form-control"
+                                       id="{{ form.first_name.id_for_label }}" value="{{ user.first_name }}">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 ">
+                                {{ form.last_name.label_tag }}
+                                <input type="text" name="{{ form.last_name.name }}" class="form-control"
+                                       id="{{ form.last_name.id_for_label }}" value="{{ user.last_name }}">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 ">
+                                {{ form.phone.label_tag }}
+                                <input type="text" name="{{ form.phone.name }}" class="form-control"
+                                       id="{{ form.phone.id_for_label }}" value="{{ user.phone }}">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 ">
+                                {{ form.email.label_tag }}
+                                <input type="text" name="{{ form.email.name }}" class="form-control"
+                                       id="{{ form.email.id_for_label }}" value="{{ user.email }}">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 ">
+                                {{ form.address.label_tag }}
+                                <input type="text" name="{{ form.address.name }}" class="form-control"
+                                       id="{{ form.address.id_for_label }}" value="{{ user.address }}">
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button class="button-style" type="submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+{% endblock %}
+

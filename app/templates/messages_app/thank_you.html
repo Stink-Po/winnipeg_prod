@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Winni Furance | Contact Us : Thank You{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="thank you for contact us ">
+    <meta name="keywords" content="Winni Furnace, contact, thank you, winnipeg, manitoba">
+    <meta property="og:title" content="Winni Furnace | Contact Us : Thank You">
+    <meta property="og:description" content="thank you for contacting us">
+    <meta property="og:url" content="{% url 'message_app:thanks' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <section>
+        <div style="height: 300px">
+            <div class="container p-5 text-center">
+                <h1 class="heading-red p-3">Thank You for Your Message</h1>
+                <p> We appreciate you taking the time to reach out to us. Your message has been received, and we want to
+                    express our gratitude for your communication.
+                </p>
+                <p>
+                    Our team is currently reviewing your message, and we will get back to you as soon as possible.
+                    Please expect a response shortly.
+                    
+
+                </p>
+                <p>
+                    Best regards
+                    Winni Furnace
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

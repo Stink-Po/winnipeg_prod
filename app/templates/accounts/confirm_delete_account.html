@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Winni Furnace | Confirm Delete Account{% endblock %}
+{%  block meta_tags %}
+    <meta name="description" content="Confirmation page for deleting Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, delete account, confirmation">
+    <meta property="og:title" content="Winni Furnace | Confirm Delete Account">
+    <meta property="og:description" content="Confirmation page for deleting Winni Furnace account">
+    <meta property="og:url" content="{% url 'accounts:confirm_delete_account' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url "pages:index" %}">Home</a></li>
+                    <li><a href="{% url "accounts:dashboard" %}">Dashboard</a></li>
+                    <li>Confirm delete Account</li>
+                </ol>
+                <h2 class="heading-red">Thank you for choosing Winni Furnace</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <section id="contact" class="contact">
+            <div class="container" style="height: 300px">
+
+                <div class="entries">
+
+                    <article class="entry entry-single">
+                        <div class="entry-content">
+                            <h3 class="heading-red">
+                                Confirm <span class="text-danger">Delete</span> Account
+                            </h3>
+                            <p>
+                                Your Account With Your All information and Your Scores Will be deleted Are You Sure ?
+                            </p>
+                            <a href="{% url 'accounts:dashboard' %}" class="no-btn">No</a>
+                            <a href="{% url 'accounts:delete_account' %}" class="button-style">Yes Iam Sure</a>
+                        </div>
+
+
+                    </article><!-- End blog entry -->
+
+                </div><!-- End blog entries list -->
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

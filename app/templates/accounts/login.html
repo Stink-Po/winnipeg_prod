@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Winni Furance | Login{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="Invalid Rest link for Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, user account, login, rest">
+    <meta property="og:title" content="Winni Furnace | Login">
+    <meta property="og:description" content="user login page">
+    <meta property="og:url" content="{% url 'login' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2 data-aos="fade-up">Login</h2>
+                <p data-aos="fade-up">Login to Your account</p>
+            </div>
+
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-9 col-lg-12 mt-4">
+                    <form action="" method="post" role="form">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {{ form.non_field_errors|striptags }}
+                            </div>
+                        {% endif %}
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group ">
+                                {{ form.username.label_tag }}
+                                <input type="text" name="{{ form.username.name }}" class="form-control"
+                                       id="{{ form.username.id_for_label }}" placeholder="Username" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 form-group mt-3 mt-md-0 ">
+                                {{ form.password.label_tag }}
+                                <input type="password" name="{{ form.password.name }}" class="form-control"
+                                       id="{{ form.password.id_for_label }}" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <button class="button-style" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+{% endblock %}

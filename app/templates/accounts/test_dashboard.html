@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load social_share %}
+{% block title %} Winni Furance | Dashboard{% endblock %}
+{% block meta_tags %}
+    <meta name="description" content="user dashboard for Winni Furnace account">
+    <meta name="keywords" content="Winni Furnace, user account, dashboard">
+    <meta property="og:title" content="Winni Furnace | Dashboard">
+    <meta property="og:description" content="user dashboard">
+    <meta property="og:url" content="{% url 'accounts:dashboard' %}">
+    <meta property="og:type" content="website">
+{% endblock %}
+{% block content %}<!-- ======= Breadcrumbs ======= -->
+
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'pages:index' %}">Home</a></li>
+                <li>Dashboard</li>
+            </ol>
+            <h2>Hello {{ user.first_name }} Welcome to your dashboard</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+
+                <div class="col-lg-8 entries">
+                    {% include "score/user_discount_codes.html" %}
+                    {% if user.is_staff %}
+                        <article class="entry">
+                            {% if all_services %}
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Service Name</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Order Time</th>
+                                        <th scope="col">View Order</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for service in all_services %}
+
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ service.get_service_display }}</td>
+                                            <td>{{ service.name }}</td>
+                                            <td>{{ service.email }}</td>
+                                            <td>{{ service.phone }}</td>
+                                            <td>{{ service.order_time }}</td>
+                                            <th><a class="button-style"
+                                                   href="{% url 'services:view_order_details' service.pk %}">View</a>
+                                            </th>
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <h2 class="entry-title heading-red">No New Order</h2>
+                            {% endif %}
+
+                        </article><!-- End blog entry -->
+                        <article class="entry">
+                            {% if messages %}
+                                <h2 class="entry-title heading-red">New Messages</h2>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">name</th>
+                                        <th scope="col">email</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">View</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for message in messages %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ message.name }}</td>
+                                            <td>{{ message.email }}</td>
+                                            <td>{{ message.created }}</td>
+                                            <td><a href="{% url 'messages_app:read_messages' pk=message.id %}"
+                                                   class="button-style">Read</a></td>
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <h2 class="entry-title heading-red">No New Message</h2>
+                            {% endif %}
+
+                        </article><!-- End blog entry -->
+                        <article class="entry">
+                            <h2 class="entry-title heading-red">New Blog Post</h2>
+                            {% include 'blog/post/new_post_form.html' %}
+                        </article>
+                        <article class="entry">
+                            <h2 class="entry-title heading-red">Add New Offer</h2>
+                            {% include 'offers/add_new_offer.html' %}
+                        </article>
+                        <article class="entry">
+                            <h2 class="entry-title heading-red">New Project</h2>
+                            {% include "projects/add_project_form.html" %}
+                        </article>
+                        <article class="entry">
+                            <h3 class="entry-title heading-red">
+                                Send Email
+                            </h3>
+                            {% include 'mail_service/send_email.html' with form=email_form %}
+                        </article>
+                    {% else %}
+                        <article class="entry">
+                            {% if user.email_confirmed %}
+                                <h3 class="heading-red">Your Invitation Unique Links :</h3>
+                                {% include 'refer.html' with referral_link=referral_link %}
+
+                            {% else %}
+                                <h5 class="heading-red pb-5">Confirm Your Email To get your unique invite link and Start
+                                    Earning More Scores :</h5>
+                                <a class="button-style"
+                                   href="{% url 'accounts:send_email_confirmation' user_id=user.id|safe %}">Confirm Your
+                                    Email</a>
+                            {% endif %}
+                        </article>
+
+
+                        <article class="entry">
+
+
+                            {% if user_services %}
+                                <h2 class="entry-title">Your Ordered Services : </h2>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Service Name</th>
+                                        <th scope="col">Order Time</th>
+                                        <th scope="col">Finish Time</th>
+                                        <th scope="col">Score gained</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for service in user_services %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>{{ service.get_service_display }}</td>
+                                            <td>{{ service.order_time }}</td>
+                                            {% if service.finished %}
+                                                <td>{{ service.finished_time }}</td>
+                                                <td><span class="text-success"> + 10 </span></td>
+                                            {% else %}
+                                                <td>In process</td>
+                                                <td> -</td>
+                                                <td><a href="{% url 'services:cancel_order' order_id=service.id %}">Cancel</a>
+                                                </td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <h2 class="entry-title">You haven't ordered any services yet.</h2>
+                            {% endif %}
+                        </article><!-- End blog entry -->
+
+                    {% endif %}
+
+                </div><!-- End blog entries list -->
+
+                <div class="col-lg-4">
+
+                    <div class="sidebar">
+
+                        <h3 class="sidebar-title">Manage Your Account</h3>
+                        <div class="sidebar-item categories">
+                            <ul>
+                                <li>Your Current Score is <span
+                                        class="text-success"><strong>{{ user.score }}</strong></span></li>
+                                <li><a href="{% url "accounts:edit_account_information" %}">Edit account information</a>
+                                </li>
+                                <li><a href="{% url 'accounts:password_change' %}">Change Password</a></li>
+                                <li><a href="{% url 'accounts:confirm_delete_account' %}">Delete Account</a></li>
+                            </ul>
+                        </div><!-- End sidebar categories-->
+
+
+                    </div><!-- End sidebar -->
+
+                </div><!-- End blog sidebar -->
+
+            </div>
+
+        </div>
+    </section><!-- End Blog Section -->
+
+{% endblock %}

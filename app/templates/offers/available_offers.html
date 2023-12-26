@@ -1,0 +1,37 @@
+<div class="container position-relative" data-aos="fade-up">
+
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+            {% if available_offers %}
+                {% for offer in available_offers %}
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{{ offer.image.url }}" class="testimonial-img" alt="">
+                            <h3>{{ offer.title }}</h3>
+                            {% if offer.available_till %}
+                                <h4>Available to {{ offer.available_till }} </h4>
+                            {% else %}
+                                <h4>Always Available</h4>
+                            {% endif %}
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                {{ offer.description }}
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+                {% endfor %}
+            {% else %}
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+
+                        <h3>No Available Offers</h3>
+
+                    </div>
+                </div><!-- End testimonial item -->
+            {% endif %}
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</div>

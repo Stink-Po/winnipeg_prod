@@ -1,0 +1,50 @@
+<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+    <div class="col-xl-9 col-lg-12 mt-4">
+        <div class="card-body">
+            <form action="{% url 'offers:add_new_offer' %}" method="post" role="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="row justify-content-center">
+                        <div class="alert alert-danger col-md-6">
+                            {{ form.non_field_errors|striptags }}
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="row justify-content-center">
+                    <div class="form-group">
+                        {{ offer_form.title.label_tag }}
+                        <input type="text" name="{{ offer_form.title.name }}" class="form-control"
+                               id="{{ offer_form.title.id_for_label }}" placeholder="Offer Title" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group">
+                        {{ offer_form.description.label_tag }}
+                        <textarea type="text" name="{{ offer_form.description.name }}" class="form-control"
+                                  id="{{ offer_form.description.id_for_label }}" placeholder="Offer Description" required rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group">
+                        {{ offer_form.available_till.label_tag }}
+                        <input type="datetime-local" name="{{ offer_form.available_till.name }}" class="form-control"
+                               id="{{ offer_form.available_till.id_for_label }}" placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ offer_form.image.label_tag }}
+                    <input type="file" name="{{offer_form.image.name }}" class="form-control"
+                           id="{{ offer_form.image.id_for_label }}" placeholder="">
+
+                </div>
+            </div>
+
+                <div class="text-center pt-3">
+                    <button class="button-style" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

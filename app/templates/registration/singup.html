@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Winni Furance | Send Rest Password{% endblock %}
+
+{% block content %}
+<section id="login-page" class="d-flex flex-column justify-content-center align-items-center">
+        <section id="login-section" class="contact w-25 mx-auto">
+            <div class="container">
+                <div class="section-title pt-0">
+                    <h2 class="text-white" data-aos="fade-up">Login</h2>
+                </div>
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-xl-9 col-lg-12 mt-4">
+                        <form class="text-white" method="post">{% csrf_token %}
+
+                             <div class="text-center">
+                                <button class="button-style" type="submit">sign up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+</section>
+{% endblock %}
