@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import ProjectsForm
 from django.contrib.auth.decorators import user_passes_test
+from django.views.decorators.csrf import csrf_protect
 
 
 def is_admin(user):
     return user.is_authenticated and user.is_staff
 
 
+@csrf_protect
 @user_passes_test(is_admin)
 def add_project(request):
     project_form = ProjectsForm

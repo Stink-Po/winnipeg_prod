@@ -22,9 +22,19 @@ from score.forms import SearchForm
 from django.contrib.sites.models import Site
 from .decorator import unauthenticated_user
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, \
-    PasswordResetCompleteView
+    PasswordResetCompleteView, LoginView
 from messages_app.models import Message
 from offers.forms import OffersForm
+from django.views.decorators.csrf import csrf_protect
+from django.utils.decorators import method_decorator
+
+
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'
+
+    @method_decorator(csrf_protect)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 @login_required
@@ -40,6 +50,7 @@ def generate_referral_link(request):
     return render(request, 'refer.html', {'referral_link': referral_link})
 
 
+@csrf_protect
 @unauthenticated_user(template_name='accounts/unauthenticated_error.html')
 def signup_view(request):
     if request.user.is_authenticated:
@@ -74,6 +85,7 @@ def signup_view(request):
     return render(request, "accounts/signup.html", {'form': form})
 
 
+@csrf_protect
 @login_required
 def dashboard(request):
     offer_form = None
@@ -112,6 +124,7 @@ def dashboard(request):
                   })
 
 
+@csrf_protect
 @login_required
 def edit_account_information(request):
     user = request.user
@@ -214,6 +227,7 @@ def send_welcome_email(user):
     message.send()
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'registration/rest_password_form.html'
     email_template_name = 'registration/password_forget_mail.html'
@@ -274,14 +288,17 @@ def email_not_found(request):
     return render(request, "accounts/user_not_found.html")
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class CustomPasswordResetDoneView(PasswordResetDoneView):
     template_name = 'registration/password_rest_send.html'
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
     template_name = 'registration/password_reset_confirm.html'
     success_url = reverse_lazy('accounts:password_reset_complete')
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'registration/password_reset_complete.html'

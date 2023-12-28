@@ -7,8 +7,10 @@ from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from projects.views import is_admin
 from django.contrib.auth.decorators import user_passes_test
+from django.views.decorators.csrf import csrf_protect
 
 
+@csrf_protect
 @user_passes_test(is_admin)
 def send_email_to_all_users(request):
     if request.method == 'POST':

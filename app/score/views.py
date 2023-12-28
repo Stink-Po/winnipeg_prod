@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import CustomUser
 from .forms import SearchForm
 from django.contrib.auth.decorators import user_passes_test
+from django.views.decorators.csrf import csrf_protect
 
 
 def is_admin(user):
@@ -22,6 +23,7 @@ def create_new_code(request):
     return redirect("accounts:dashboard")
 
 
+@csrf_protect
 @login_required
 def user_discount_code(request):
     form = SearchForm()
@@ -32,6 +34,7 @@ def user_discount_code(request):
     })
 
 
+@csrf_protect
 @user_passes_test(is_admin)
 def search_discount_code(request):
     if request.method == "POST":

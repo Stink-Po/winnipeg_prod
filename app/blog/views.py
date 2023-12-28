@@ -8,6 +8,7 @@ from taggit.models import Tag
 from .forms import PostForm
 from projects.views import is_admin
 from django.contrib.auth.decorators import user_passes_test
+from django.views.decorators.csrf import csrf_protect
 
 
 def paginate_results(request, queryset, num_items=3):
@@ -21,7 +22,6 @@ def paginate_results(request, queryset, num_items=3):
 
 
 def post_list(request, tag_slug=None):
-
     form = SearchForm()
     all_tags = Tag.objects.all()
     if all_tags:
@@ -95,6 +95,7 @@ def post_search(request):
     })
 
 
+@csrf_protect
 @user_passes_test(is_admin)
 def create_post(request):
     if request.method == 'POST':

@@ -5,8 +5,11 @@ from .models import Message
 from projects.views import is_admin
 from django.contrib.auth.decorators import user_passes_test
 from mail_service.views import we_got_new_message
+from django.views.decorators.csrf import csrf_protect
+from django.utils.decorators import method_decorator
 
 
+@csrf_protect
 def contact(request):
     if request.method == 'POST':
         form = MessageForm(data=request.POST)
@@ -20,6 +23,7 @@ def contact(request):
         return render(request, "messages_app/contact.html", {"form": form})
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class MessageView(View):
     def post(self, request, *args, **kwargs):
         form = MessageForm(data=request.POST)

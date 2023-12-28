@@ -3,8 +3,11 @@ from messages_app.forms import MessageForm
 from django.views.generic import View
 from projects.models import OurProjects
 from services.forms import UsersServicesForm, OurServicesForm
+from django.views.decorators.csrf import csrf_protect
+from django.utils.decorators import method_decorator
 
 
+@csrf_protect
 def index(request):
     all_projects = OurProjects.objects.all()
     if request.user.is_authenticated:
@@ -20,6 +23,7 @@ def index(request):
                   )
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class DuctCleaning(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -29,6 +33,7 @@ class DuctCleaning(View):
         return render(request, "pages/duct_cleaning.html", {"service_form": service_form})
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class FurnaceCleaning(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -39,6 +44,7 @@ class FurnaceCleaning(View):
         return render(request, "pages/furnace cleaning.html", {"service_form": service_form})
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class AirConditionerInstallation(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -49,6 +55,7 @@ class AirConditionerInstallation(View):
         return render(request, "pages/Air_Conditioner_Installation.html", {"service_form": service_form})
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class AirConditionerRepair(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -59,6 +66,7 @@ class AirConditionerRepair(View):
         return render(request, "pages/Air_Conditioner_Tune_Up.html", {"service_form": service_form}, )
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class FurnaceInstallation(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -68,6 +76,7 @@ class FurnaceInstallation(View):
         return render(request, "pages/furnace_installation.html", {"service_form": service_form})
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class FurnaceRepair(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -77,6 +86,7 @@ class FurnaceRepair(View):
         return render(request, "pages/furnace_repair.html", {"service_form": service_form})
 
 
+@method_decorator(csrf_protect, name='dispatch')
 class ServicesView(View):
     def get(self, requset, *args, **kwargs):
         if requset.user.is_authenticated:

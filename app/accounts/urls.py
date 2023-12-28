@@ -2,13 +2,14 @@ from django.urls import path
 from .views import (signup_view, dashboard, edit_account_information, confirm_delete_account, delete_account,
                     logout_view, confirm_email, send_confirmation_email, generate_referral_link,
                     CustomPasswordResetView, CustomPasswordResetDoneView, CustomPasswordResetConfirmView,
-                    CustomPasswordResetCompleteView, email_not_found)
+                    CustomPasswordResetCompleteView, email_not_found, CustomLoginView)
 from django.contrib.auth import views as auth_views
 
 app_name = 'accounts'
 
 urlpatterns = [
     path("", dashboard, name="dashboard"),
+    path("accounts/login/", CustomLoginView.as_view(), name="login"),
     path("signup/", signup_view, name="signup"),
     path("logout/", logout_view, name="logout"),
     path("password-change/", auth_views.PasswordChangeView.as_view(), name="password_change"),

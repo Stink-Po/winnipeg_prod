@@ -9,16 +9,18 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 SITE_ID = 1
 
 DEBUG = False
-
-
-ALLOWED_HOSTS = ["winni-furnace.ca", "www.winni-furnace.ca"]
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://winni-furnace.ca',
+    "https://www.winni-furnace.ca",
+]
+ALLOWED_HOSTS = ["winni-furnace.ca", "www.winni-furnace.ca", "*"]
 ADMINS = [
     ('morteza', 'morteza.behnezhad@gmail.com'),
     ("stink", "mr.poorya.mohamadi@gmail.com"),
 ]
 # Application definition
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_DOMAIN = '.winni-furnace.ca'
 
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -9,6 +9,7 @@ from projects.views import is_admin
 from django.contrib.auth.decorators import user_passes_test
 from accounts.models import CustomUser
 from django.contrib.sites.models import Site
+from django.views.decorators.csrf import csrf_protect
 
 
 def view_offers(request):
@@ -24,6 +25,7 @@ def view_offers(request):
     })
 
 
+@csrf_protect
 @user_passes_test(is_admin)
 def add_new_offer(request):
     offer_form = OffersForm()

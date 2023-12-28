@@ -10,8 +10,10 @@ from .models import OurServices
 from projects.views import is_admin
 from django.contrib.auth.decorators import user_passes_test
 from mail_service.views import we_got_new_order
+from django.views.decorators.csrf import csrf_protect
 
 
+@csrf_protect
 def order(request):
     if request.user.is_authenticated:
         form = UsersServicesForm()
