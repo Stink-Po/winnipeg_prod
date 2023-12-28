@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector
@@ -23,13 +23,7 @@ def paginate_results(request, queryset, num_items=3):
 
 def post_list(request, tag_slug=None):
     form = SearchForm()
-    all_tags = Tag.objects.all()
-    if all_tags:
-        all_tags = all_tags
-    else:
-        all_tags = None
-
-    print(all_tags)
+    all_tags = get_list_or_404(Tag)
     posts_list = Post.published.all()
 
     if tag_slug:

@@ -109,8 +109,8 @@
                         <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:about' %}">About us</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:services' %}">Our Services</a>
                         </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'offers:view_offers' %}">Offers</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'blog:post_list' %}">Blog</a></li>
                     </ul>
                 </div>
 
@@ -157,6 +157,15 @@
         </div>
     </div>
 </footer><!-- End Footer -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBSY9Z2HH9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HBSY9Z2HH9');
+</script>
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>

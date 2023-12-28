@@ -2,6 +2,13 @@
 {% load offers_tags %}
 {% block title %}Winni-Furance | Heating & Cooling Services in Winnipeg, Manitoba{% endblock %}
 {% block meta_tags %}
+    <meta name="description"
+          content="Winni-Furance offers heating and cooling services in Winnipeg, Manitoba. Specializing in air duct and vent cleaning, furnace installation, and customer-centric solutions. Join our community for exclusive discounts.">
+    <meta name="keywords"
+          content="Winni-Furance, heating, cooling, air duct cleaning, furnace installation, Winnipeg, Manitoba, duct cleaning, vent cleaning, air duct, air duct cleaning">
+    <meta property="og:title" content="Winni-Furance | Heating & Cooling Services in Winnipeg, Manitoba">
+        <meta property="og:description" content="Winni-Furance offers heating and cooling services in Winnipeg, Manitoba. Specializing in air duct and vent cleaning, furnace installation, and customer-centric solutions. Join our community for exclusive discounts.">
+    <meta property="og:url" content="{% url 'pages:index' %}">
 {% endblock %}
 {% block content %}
     <!-- ======= Hero Section ======= -->
@@ -211,11 +218,11 @@
 
             </div>
         </section><!-- End Values Section -->
-    <h3 class="heading-red text-center p-5">Available Offers</h3>
-    <section id="testimonials" class="testimonials">
-        
-        {% show_latest_offers %}
-    </section>
+        <h3 class="heading-red text-center p-5">Available Offers</h3>
+        <section id="testimonials" class="testimonials">
+
+            {% show_latest_offers %}
+        </section>
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container">
