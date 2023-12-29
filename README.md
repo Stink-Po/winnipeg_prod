@@ -38,12 +38,16 @@ cd winnipeg_prod
 # Install dependencies
 ```bash
 pip install -r requirements.txt
-Run the Application:
+
+# Run the Application
 
 ```bash
 python manage.py runserver
-Explore the Website:
+
+# Explore the Website:
+
 Visit http://localhost:8000/ in your browser.
 
-Contribution Guidelines
+# Contribution Guidelines
+
 Feel free to contribute by opening issues or submitting pull requests. Your input is highly appreciated!
