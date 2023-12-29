@@ -29,23 +29,23 @@ This project showcases a dynamic website developed for a local company in Winnip
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/Stink-Po/winnipeg_prod.git
-Install Dependencies:
 
-# Navigate to the project directory
-cd winnipeg_prod
-# Install dependencies
-```bash
-pip install -r requirements.txt
+2. **Navigate to the project directory:**
+   ```bash
+   cd winnipeg_prod
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
 
-# Run the Application
+4. **Run the Application:**
 
-```bash
-python manage.py runserver
+   ```bash
+   python manage.py runserver
 
-# Explore the Website:
+5. **Explore the Website:**
+   ```bash
+   Visit http://localhost:8000/ in your browser.
+   
+## Contribution Guidelines
 
-Visit http://localhost:8000/ in your browser.
-
-# Contribution Guidelines
-
-Feel free to contribute by opening issues or submitting pull requests. Your input is highly appreciated!
+- Feel free to contribute by opening issues or submitting pull requests. Your input is highly appreciated!
