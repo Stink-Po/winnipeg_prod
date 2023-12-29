@@ -31,8 +31,6 @@ This project showcases a dynamic website developed for a local company in Winnip
    git clone https://github.com/Stink-Po/winnipeg_prod.git
 Install Dependencies:
 
-bash
-Copy code
 # Navigate to the project directory
 cd winnipeg_prod
 # Install dependencies
