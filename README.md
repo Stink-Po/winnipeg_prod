@@ -36,11 +36,11 @@ Copy code
 # Navigate to the project directory
 cd winnipeg_prod
 # Install dependencies
+```bash
 pip install -r requirements.txt
 Run the Application:
 
-bash
-Copy code
+```bash
 python manage.py runserver
 Explore the Website:
 Visit http://localhost:8000/ in your browser.
