@@ -1,8 +1,7 @@
 from django.urls import path
 from .views import (index, DuctCleaning, ServicesView, AboutView,
                     FurnaceInstallation, FurnaceRepair, FurnaceCleaning,
-                    AirConditionerInstallation, AirConditionerRepair)
-
+                    AirConditionerInstallation, AirConditionerRepair, robots)
 
 handler404 = "pages.views.handler404_view"
 handler500 = "pages.views.handler500_view"
@@ -20,7 +19,5 @@ urlpatterns = [
     path("Air-Conditioner-Installation-in-Winnipg/",
          AirConditionerInstallation.as_view(),
          name="air_conditioner_installation"),
+    path("robots.txt", robots, name="robots"),
 ]
-
-
-

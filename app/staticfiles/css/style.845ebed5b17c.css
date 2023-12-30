@@ -402,7 +402,7 @@ h6 {
 #hero {
     width: 100%;
     height: 60vh;
-    background: url("../img/AC-Duct-Repair-1024x683.jpeg") center center;
+    background: url("../img/AC-Duct-Repair-1024x683.fc069ff7bbdb.jpeg") center center;
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -710,7 +710,7 @@ section {
 }
 
 .about .video-box {
-    background: url("../img/quality1.jpg") center center no-repeat;
+    background: url("../img/quality1.eef73eb05f63.jpg") center center no-repeat;
     background-size: cover;
     min-height: 500px;
 }
@@ -955,7 +955,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
     padding: 80px 0;
-    background: url("../img/offers_back.jpg") no-repeat;
+    background: url("../img/offers_back.c34951dea646.jpg") no-repeat;
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -2296,7 +2296,7 @@ section {
 }
 
 #login-page {
-    background: url("../img/AC-Duct-Repair-1024x683.jpeg") center center;
+    background: url("../img/AC-Duct-Repair-1024x683.fc069ff7bbdb.jpeg") center center;
     background-size: cover;
 }
 
@@ -2339,43 +2339,43 @@ section {
 }
 
 .service-box {
-    background: url("../img/our_services.jpg") center center no-repeat;
+    background: url("../img/our_services.f2f2a28cc7db.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }
 
 .our_story_box {
-    background: url("../img/our_story.jpg") center center no-repeat;
+    background: url("../img/our_story.6ce2b87c7609.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }
 
 .our_values_box {
-    background: url("../img/hand-connecting-puzzle-pieces-table.jpg") center center no-repeat;
+    background: url("../img/hand-connecting-puzzle-pieces-table.0ae2249b3e07.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }
 
 .apart_box {
-    background: url("../img/Apart.jpg") center center no-repeat;
+    background: url("../img/Apart.1a1c328b5db7.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }
 
 .our_servie_box {
-    background: url("../img/our_services_about.jpg") center center no-repeat;
+    background: url("../img/our_services_about.5d809e8c9927.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }
 
 .score_box1 {
-    background: url("../img/score1.jpg") center center no-repeat;
+    background: url("../img/score1.00e7a8271038.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }
 
 .score_box2 {
-    background: url("../img/score2.jpg") center center no-repeat;
+    background: url("../img/score2.23f0f6795df9.jpg") center center no-repeat;
     background-size: contain;
     min-height: 500px;
 }

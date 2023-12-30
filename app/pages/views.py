@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from messages_app.forms import MessageForm
 from django.views.generic import View
@@ -107,3 +108,8 @@ def handler404_view(request, exception):
 
 def handler500_view(request):
     return render(request, 'pages/500.html', status=500)
+
+
+def robots(request):
+    contest = "User-agent: *\nDisallow: /private/\nDisallow: /restricted/\nDisallow: /accounts/"
+    return HttpResponse(contest, content_type="text/plain")

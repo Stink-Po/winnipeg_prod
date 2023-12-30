@@ -22,6 +22,24 @@ ADMINS = [
 ]
 # Application definition
 
+LOGGING = {
+    'version': 1,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'log.txt'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -139,7 +157,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = "django_ses.SESBackend"
 AWS_SES_REGION_NAME = "us-west-1"
-ASW_SES_REGION_ENDPOINT = "email-smtp.us-west-1.amazonaws.com"
+ASW_SES_REGION_ENDPOINT = "email-smtp.ca-central.amazonaws.com"
 EMAIL_HOST_USER = "info@winni-furnace.ca"
 
 STATIC_URL = "/static/"
@@ -152,7 +170,7 @@ MEDIA_URL = '/media/'
 AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = 'wiini'
-AWS_S3_SIGNATURE_NAME = config("AWS_S3_SIGNATURE_NAME")
+AWS_S3_SIGNATURE_NAME = 's3v4'
 AWS_S3_REGION_NAME = 'ca-central-1'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None

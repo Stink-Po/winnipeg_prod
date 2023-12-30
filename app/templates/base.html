@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="author" content="Winni Furnace">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
 
     <title>
         {% block title %}{% endblock %}
@@ -15,7 +16,10 @@
     {% block meta_tags %}
     {% endblock %}
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/logo-1-removebg-preview.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
           rel="stylesheet">
@@ -160,11 +164,15 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBSY9Z2HH9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-HBSY9Z2HH9');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-HBSY9Z2HH9');
 </script>
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -177,27 +185,29 @@
 <script src="{% static "vendor/php-email-form/validate.js" %}"></script>
 <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Winni Furnace",
-      "description": "Expert duct cleaning and furnace installation repair and Cleaning and Air Conditioner installation and tune-up services in winnipeg manitoba.",
-      "url": "https://www.winni-furnace.ca",
-      "logo": "https://www.winni-furnace.ca/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "80 Lomond Blvd",
-        "addressLocality": "Winnipeg",
-        "addressRegion": "Manitoba",
-        "addressCountry": "Canada"
-      },
-      "telephone": "+12042974420",
-      "openingHours": "24/7",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "49.895077",
-        "longitude": " -97.138451"
-      },
-      "sameAs": ["https://www.facebook.com/profile.php?id=100090651934963"]
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Winni Furnace",
+        "description": "Expert duct cleaning and furnace installation repair and Cleaning and Air Conditioner installation and tune-up services in winnipeg manitoba.",
+        "url": "https://www.winni-furnace.ca",
+        "logo": "{% static 'img/logo-1-removebg-preview.png' %}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "80 Lomond Blvd",
+            "addressLocality": "Winnipeg",
+            "addressRegion": "Manitoba",
+            "addressCountry": "Canada"
+        },
+        "telephone": "+12042974420",
+        "openingHours": "24/7",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "49.895077",
+            "longitude": " -97.138451"
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=100090651934963"
+        ]
     }
 </script>
 <!-- Template Main JS File -->
