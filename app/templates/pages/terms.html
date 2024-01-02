@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block meta_tags %}
+    <meta name="description"
+          content="Winni-Furance is your trusted partner for HVAC services in Winnipeg, Manitoba. Terms of Service">
+    <meta name="keywords"
+          content="Winni Furance, HVAC services, heating, ventilation, air conditioning, Winnipeg, Manitoba, duct cleaning, furnace installation, furnace repair, furnace cleaning, air conditioner installation, air conditioner repair, affordable HVAC, reliable HVAC, clean air, energy-efficient HVAC">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | Terms of Service">
+    <meta property="og:description"
+          content="Winni-Furance is your trusted partner for HVAC services in Winnipeg, Manitoba. We specialize in duct cleaning, furnace installation, repair, and cleaning, as well as air conditioner installation and repair. Affordable and reliable solutions for your comfort.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% url "pages:privacy" %}">
+    <!-- Add the actual path to your image -->
+    <meta property="og:image:alt" content="Winni Furance Logo">
+{% endblock %}
+{% block title %}Winni Furance | Terms of Service{% endblock %}
+{% block content %}
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url "pages:terms" %}">Home</a></li>
+                <li>Terms of Service</li>
+            </ol>
+            <h2>Terms of Service Winni Furance</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <section>
+
+        <div class="container p-5">
+
+            <div class="row p-5" data-aos="fade-up">
+
+                <div>
+
+                    <h1 class="heading-red p-lg-5" data-aos="fade-up" style="display: inline"><i
+                            class="fa-solid fa-people-roof"></i> Terms of Service</h1>
+                </div>
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Acceptance of Terms</h3>
+                    <p>By accessing or using the Winni Furnace website, you agree to comply with these Terms of
+                        Service.</p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>User Responsibilities</h3>
+                    <ol>
+                        <li>
+                            <h4>Accurate Information</h4>
+                            <ul>
+                                <li>
+                                    <p>Users are responsible for providing accurate and up-to-date information during
+                                        account registration.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Account Security</h4>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Users are responsible for maintaining the confidentiality of their account
+                                        credentials.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Limitation of Liability</h3>
+                    <p>Winni Furnace shall not be liable for any direct, indirect, incidental, consequential, or
+                        exemplary damages arising from the use of our services.</p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Sharing of Personal Information</h3>
+                    <p>Winni Furnace is committed to protecting the privacy of our users. We do not share, sell, or
+                        otherwise disclose personal information with third-party applications, websites, or services
+                        without the explicit consent of the user.
+                    </p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Third-Party Services</h3>
+                    <p>We may use third-party services or tools for analytics, marketing, or other legitimate business
+                        purposes. However, these services are chosen carefully, and we ensure that they adhere to strict
+                        privacy standards. These third parties are prohibited from using your personal information for
+                        any purposes other than those specified by us.
+                    </p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Exceptions</h3>
+                    <p>There may be instances where we may be required to share personal information in compliance with
+                        legal obligations, such as responding to lawful requests by public authorities or enforcing our
+                        website policies.
+
+                    </p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Limitation of Liability</h3>
+                    <p>Winni Furnace shall not be liable for any direct, indirect, incidental, consequential, or
+                        exemplary damages arising from the use of our services.</p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3>Changes to Terms and Privacy Policy</h3>
+                    <p>Winni Furnace reserves the right to update these Terms of Service and the Privacy Policy at any
+                        time. Users will be notified of significant changes.
+
+                        If you have any questions or concerns about our Privacy Policy or Terms of Service, please
+                        contact us at contact@winni-furnace.ca or +1 204 297 4420.</p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section><!-- End About Section -->
+{% endblock %}

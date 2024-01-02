@@ -113,3 +113,11 @@ def handler500_view(request):
 def robots(request):
     contest = "User-agent: *\nDisallow: /private/\nDisallow: /restricted/\nDisallow: /accounts/"
     return HttpResponse(contest, content_type="text/plain")
+
+
+def privacy(request):
+    return render(request, 'pages/privacy.html')
+
+
+def terms(request):
+    return render(request, 'pages/terms.html')

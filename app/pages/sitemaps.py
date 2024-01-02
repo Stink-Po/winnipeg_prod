@@ -5,6 +5,7 @@ from django.urls import reverse
 class PagesSitemap(Sitemap):
     changefreq = 'weekly'
     priority = 0.8
+    protocol = 'https'
 
     def items(self):
         return [

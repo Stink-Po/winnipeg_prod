@@ -4,10 +4,17 @@ from .models import CustomUser
 
 
 class CustomUserCreationForm(UserCreationForm):
+    agree_to_terms = forms.BooleanField(
+        required=True,
+        initial=False,
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        label='I agree to the terms and conditions'
+    )
+
     class Meta(UserCreationForm.Meta):
         model = CustomUser
         fields = UserCreationForm.Meta.fields + (
-            "email", "address", "phone", "first_name", "last_name")
+            "email", "address", "phone", "first_name", "last_name", "agree_to_terms")
 
 
 class CustomUserChangeForm(UserChangeForm):

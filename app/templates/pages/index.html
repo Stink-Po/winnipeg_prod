@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load offers_tags %}
-{% block title %}Winni-Furance | Heating & Cooling Services in Winnipeg, Manitoba{% endblock %}
+{% block title %}Winni-Furance | HVAC services in Winnipeg , Manitoba{% endblock %}
 {% block meta_tags %}
     <meta name="description"
-          content="Winni-Furance offers heating and cooling services in Winnipeg, Manitoba. Specializing in air duct and vent cleaning, furnace installation, and customer-centric solutions. Join our community for exclusive discounts.">
+          content="Winni-Furance offers heating and cooling services in Winnipeg, Manitoba. Specializing in air duct and vent cleaning, furnace installation, HRV installation">
     <meta name="keywords"
           content="Winni-Furance, heating, cooling, air duct cleaning, furnace installation, Winnipeg, Manitoba, duct cleaning, vent cleaning, air duct, air duct cleaning">
     <meta property="og:title" content="Winni-Furance | Heating & Cooling Services in Winnipeg, Manitoba">
@@ -15,7 +15,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
         <div class="container" data-aos="fade-in">
-            <h1>Welcome to Winni Furance</h1>
+            <h1>Winni Furance HVAC services in Winnipeg</h1>
             <h2 class="heading-color">Heating & Colling</h2>
             <div class="d-flex align-items-center">
                 <i class="bx bxs-right-arrow-alt get-started-icon"></i>
@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-5" data-aos="fade-up">
                         <div class="content">
-                            <h3>Why Choose Winni-furance for your company or your home?</h3>
+                            <h3>Why Choose Winni Furance for your company or your home?</h3>
                             <p>
                                 Join our community of valued website members and unlock a special privilege – a 10%
                                 discount on all our services! As a token of our appreciation for your trust and loyalty,
@@ -74,7 +74,7 @@
                                 <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up"
                                      data-aos-delay="200">
                                     <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-cube-alt"></i>
+                                        <i class="fa-solid fa-wrench"></i>
                                         <h4>Furnace Installation Experts</h4>
                                         <p>Trust our proven track record for expert and swift furnace installations
                                             using cutting-edge tools and techniques</p>
@@ -83,7 +83,7 @@
                                 <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up"
                                      data-aos-delay="300">
                                     <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-images"></i>
+                                        <i class="fa-solid fa-user-shield"></i>
                                         <h4>Customer-Centric Solutions</h4>
                                         <p>Tailored services to meet your unique needs, whether it's duct cleaning or
                                             furnace installation. Experience transparent pricing and open communication
@@ -147,7 +147,11 @@
 
             </div>
         </section><!-- End About Section -->
+        <h3 class="heading-red text-center p-5">Available Offers</h3>
+        <section id="testimonials" class="testimonials">
 
+            {% show_latest_offers %}
+        </section>
         <!-- ======= Clients Section ======= -->
 
 
@@ -219,11 +223,7 @@
 
             </div>
         </section><!-- End Values Section -->
-        <h3 class="heading-red text-center p-5">Available Offers</h3>
-        <section id="testimonials" class="testimonials">
 
-            {% show_latest_offers %}
-        </section>
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container">
@@ -249,7 +249,7 @@
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     {% for project in projects %}
                         <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.title }}">
-                            <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title.value }}">
+                            <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title.value }}" style="width: 300px; height: 300px;">
                             <div class="portfolio-info">
                                 <h4>{{ project.get_friendly_title }}</h4>
                             </div>

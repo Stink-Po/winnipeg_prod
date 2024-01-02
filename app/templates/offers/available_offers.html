@@ -6,18 +6,13 @@
                 {% for offer in available_offers %}
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="{{ offer.image.url }}" class="testimonial-img" alt="">
-                            <h3>{{ offer.title }}</h3>
+                            <img src="{{ offer.image.url }}" class="testimonial-img" alt="{{ offer.title }} image">
+                            <h2 class="heading-red"><a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a></h2>
                             {% if offer.available_till %}
                                 <h4>Available to {{ offer.available_till }} </h4>
                             {% else %}
                                 <h4>Always Available</h4>
                             {% endif %}
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                {{ offer.description }}
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
                         </div>
                     </div><!-- End testimonial item -->
                 {% endfor %}

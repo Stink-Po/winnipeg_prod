@@ -5,14 +5,12 @@ from django.utils import timezone
 
 class OurServices(models.Model):
     class ServicesChoice(models.TextChoices):
-        FREE_DUCT_INSPECTION = "DI", "Free Duct Inspection"
-        FREE_SANITIZATION = "FS", "Free Sanitization"
-        DUCT_CLEANING = "DC", "Duct Cleaning"
+        DUCT_CLEANING = "DC", "Air vent Duct Cleaning"
         FURNACE_INSTALLATION = "FI", "Furnace Installation"
-        FURNACE_REPAIR = "FR", "Furnace Repair"
-        FURNACE_CLEANING = "FC", "Furnace Cleaning"
+        FURNACE_REPAIR = "FR", "Furnace Repair - Tune up"
+        HRV_INSTALLATION = "HR", "HRV Installation"
         AIR_CONDITIONER_INSTALLATION = "AI", "Air Conditioner Installation"
-        AIR_CONDITIONER_TUNE_UP = "AR", "Air Conditioner Tune Up"
+        AIR_CONDITIONER_TUNE_UP = "AR", "Air Conditioner Tune Up - Repair"
 
     service = models.CharField(max_length=2, choices=ServicesChoice.choices)
     is_user = models.BooleanField(default=False)

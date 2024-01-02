@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (index, DuctCleaning, ServicesView, AboutView,
                     FurnaceInstallation, FurnaceRepair, FurnaceCleaning,
-                    AirConditionerInstallation, AirConditionerRepair, robots)
+                    AirConditionerInstallation, AirConditionerRepair, robots, privacy, terms)
 
 handler404 = "pages.views.handler404_view"
 handler500 = "pages.views.handler500_view"
@@ -15,9 +15,11 @@ urlpatterns = [
     path("Furnace-Installation-in-Winnipg/", FurnaceInstallation.as_view(), name="furnace_installation"),
     path("Furnace-Repair-in-Winnipg/", FurnaceRepair.as_view(), name="furnace_repair"),
     path("Air-Conditioner-Tune-up-in-Winnipg/", AirConditionerRepair.as_view(), name="air_conditioner_tune_up"),
-    path("Furnace-Cleaning-in-Winnipg/", FurnaceCleaning.as_view(), name="furnace_cleaning"),
+    path("HRV-Installation-in-Winnipg/", FurnaceCleaning.as_view(), name="furnace_cleaning"),
     path("Air-Conditioner-Installation-in-Winnipg/",
          AirConditionerInstallation.as_view(),
          name="air_conditioner_installation"),
-    path("robots.txt", robots, name="robots"),
+    path("robots.txt/", robots, name="robots"),
+    path("Privacy-Policy/", privacy, name="privacy"),
+    path("Terms-of-Service/", terms, name="terms"),
 ]

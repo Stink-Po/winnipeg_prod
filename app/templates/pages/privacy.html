@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block meta_tags %}
+    <meta name="description"
+          content="Winni-Furance is your trusted partner for HVAC services in Winnipeg, Manitoba. Privacy Policy">
+    <meta name="keywords"
+          content="Winni Furance, HVAC services, heating, ventilation, air conditioning, Winnipeg, Manitoba, duct cleaning, furnace installation, furnace repair, furnace cleaning, air conditioner installation, air conditioner repair, affordable HVAC, reliable HVAC, clean air, energy-efficient HVAC">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winni Furance | Privacy Policy">
+    <meta property="og:description"
+          content="Winni-Furance is your trusted partner for HVAC services in Winnipeg, Manitoba. We specialize in duct cleaning, furnace installation, repair, and cleaning, as well as air conditioner installation and repair. Affordable and reliable solutions for your comfort.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% url "pages:privacy" %}">
+    <!-- Add the actual path to your image -->
+    <meta property="og:image:alt" content="Winni Furance Logo">
+{% endblock %}
+{% block title %}Winni Furance | Privacy Policy{% endblock %}
+{% block content %}
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url "pages:index" %}">Home</a></li>
+                <li>Privacy Policy</li>
+            </ol>
+            <h2>Privacy Policy Winni Furance</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <section>
+
+        <div class="container p-5">
+
+            <div class="row p-5">
+
+                <div>
+
+                    <h1 class="heading-red p-lg-5" data-aos="fade-up" style="display: inline"><i
+                            class="fa-solid fa-people-roof"></i> Privacy Policy</h1>
+                </div>
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3 data-aos="fade-up">Welcome to Winni Furnace, your trusted local HVAC service provider in
+                        Winnipeg, Manitoba. This Privacy Policy outlines how we collect, use, and protect your personal
+                        information.</h3>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3 data-aos="fade-up">Information We Collect</h3>
+                    <ol>
+                        <li>
+                            <h4>Personal Information</h4>
+                            <ul>
+                                <li>
+                                    <p>When you sign up on our website, we collect your email address, phone number, and
+                                        optional address information for communication and service delivery.</p>
+                                </li>
+                                <li>
+                                    <p>When send a message with contact us form on our website, we collect your email
+                                        address, phone number, and
+                                        optional address information for communication and service delivery.</p>
+                                </li>
+                                <li>
+                                    <p>When order a service on our website, we collect your email address, phone number,
+                                        and
+                                        optional address information for communication and service delivery.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Usage Data</h4>
+                            <ul>
+                                <li>
+                                    <p>
+                                        We may collect information about how you interact with our website, such as the
+                                        pages visited and actions taken.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3 data-aos="fade-up">Use of Information</h3>
+                    <p>We use your information for the following purposes:</p>
+                    <ol>
+                        <li>
+                            <h4>Account Management:</h4>
+                            <ul>
+                                <li>To create and manage your account, providing you with personalized services.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Communication:</h4>
+                            <ul>
+                                <li>To contact you regarding your account, service updates, or promotions.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Service Delivery:</h4>
+                            <ul>
+                                <li>To fulfill HVAC service requests and improve our services.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3 data-aos="fade-up">Data Security</h3>
+                    <p>We are committed to ensuring the security of your information. We employ industry-standard
+                        measures to protect against unauthorized access, disclosure, alteration, or destruction.</p>
+                </div>
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+                    <h3 data-aos="fade-up">User Control</h3>
+                    <ol>
+                        <li>
+                            <h4>Account Deletion</h4>
+                            <ul>
+                                <li>Users have the right to delete their accounts at any time. Upon deletion, all
+                                    associated information will be permanently removed from our database.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Opt-Out:</h4>
+                            <ul>
+                                <li>Users can opt-out of promotional communications by following the instructions
+                                    provided in the emails.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section><!-- End About Section -->
+{% endblock %}

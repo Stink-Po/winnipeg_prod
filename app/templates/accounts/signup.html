@@ -79,11 +79,39 @@
                                        id="{{ form.address.id_for_label }}" placeholder="Address ( Optional )">
                             </div>
                         </div>
-                        <div class="text-center pt-3">
-                            <button class="button-style btn btn-lg" type="submit">SignUp</button>
-                            <p class="pt-3"><a href="{% url 'login' %}">Already Have Account ?</a></p>
+                        <div class="container pt-3">
+                            <div class="row justify-content-center">
+                                <div class="col-md-5">
+                                    <div>
+                                        <div class="form-check justify-content-center">
+                                            {{ form.agree_to_terms }}
+                                            <label class="form-check-label"
+                                                   for="{{ form.agree_to_terms.id_for_label }}">
+                                                <a href="{% url 'pages:terms' %}">I agree to the terms
+                                                    and
+                                                    conditions</a>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
+                        <div class="text-center pt-3">
+                            <button class="button-style btn  btn-lg" type="submit">Signup</button>
+                        </div>
+
                     </form>
+                </div>
+                <div class="text-center pt-5">
+                    <p class="pt-3"><a href="{% url 'login' %}">Already Have Account ?</a></p>
+                </div>
+                <div class="text-center pt-3">
+                    <a href="{% url 'pages:terms' %}">Terms of Service</a>
+                </div>
+                <div class="text-center pt-3">
+                    <a href="{% url 'pages:privacy' %}">Privacy Policy</a>
                 </div>
             </div>
 

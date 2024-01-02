@@ -23,7 +23,7 @@ urlpatterns = [
     path("order/", include("services.urls")),
     path("score/", include("score.urls")),
     path("mail_service/", include("mail_service.urls")),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
     path("projects/", include("projects.urls")),
     path("offers/", include("offers.urls")),

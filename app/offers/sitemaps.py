@@ -5,6 +5,7 @@ from .models import SiteOffers
 class OffersSitemap(Sitemap):
     changefreq = 'weekly'
     priority = 0.9
+    protocol = "https"
 
     def items(self):
         return SiteOffers.objects.filter(
