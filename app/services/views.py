@@ -120,7 +120,7 @@ def confirm_order(request, service_name, name, phone, email, message):
     message.attach_alternative(html_message, "text/html")
     message.send()
 
-    return render(request, "services/success_order.html", {"service_name": original_service_name})
+    return render(request, "services/success_order.html", {"service_name": original_service_name,})
 
 
 @user_passes_test(is_admin)

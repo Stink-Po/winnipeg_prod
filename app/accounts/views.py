@@ -27,6 +27,7 @@ from messages_app.models import Message
 from offers.forms import OffersForm
 from django.views.decorators.csrf import csrf_protect
 from django.utils.decorators import method_decorator
+from email.utils import formataddr
 
 
 class CustomLoginView(LoginView):
@@ -204,7 +205,7 @@ def send_mail_function(user, request):
 
     message = EmailMultiAlternatives(
         subject="Confirm Your Email",
-        from_email=settings.EMAIL_HOST_USER,
+        from_email=formataddr(("Winni furnace", settings.EMAIL_HOST_USER)),
         to=[user.email],
         body=plain_message,
     )
@@ -219,7 +220,7 @@ def send_welcome_email(user):
     plain_message = strip_tags(html_message)
     message = EmailMultiAlternatives(
         subject="Welcome to Winni Furnace",
-        from_email=settings.EMAIL_HOST_USER,
+        from_email=formataddr(("Winni furnace", settings.EMAIL_HOST_USER)),
         to=recipient_list,
         body=plain_message,
     )
@@ -264,7 +265,7 @@ class CustomPasswordResetView(PasswordResetView):
 
             message = EmailMultiAlternatives(
                 subject="Rest Password",
-                from_email=settings.EMAIL_HOST_USER,
+                from_email=formataddr(("Winni furnace", settings.EMAIL_HOST_USER)),
                 to=[user.email],
                 body=plain_message,
             )

@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block meta_tags %}
     <meta name="description"
-          content="Winni-Furance provides expert furnace repair services in Winnipeg and surrounding areas. Our qualified HVAC technicians offer 24/7/365 emergency repair services. Get your heating system back up and running efficiently with our high-quality furnace repairs. Contact us anytime, including after-hours, weekends, and holidays, at no extra cost. Book your furnace repair with Winni-Furance Heating & Cooling today!">
+          content="Winni-Furance provides expert furnace repair and tune-up services in Winnipeg and surrounding areas. Our qualified HVAC technicians offer 24/7/365 emergency repair services. Ensure your heating system operates efficiently with our high-quality furnace repairs and tune-ups. Contact us anytime, including after-hours, weekends, and holidays, at no extra cost. Book your furnace service with Winni-Furance Heating & Cooling today!">
     <meta name="keywords"
-          content="Winni Furance, furnace repair, heating system repair, HVAC technicians, emergency furnace repair, Winnipeg, Manitoba, 24/7 furnace repair, after-hours repair, weekend repair, holiday repair, heating system efficiency">
+          content="Winni Furnace, furnace repair, heating system repair, HVAC technicians, emergency furnace repair, Winnipeg, Manitoba, 24/7 furnace repair, after-hours repair, weekend repair, holiday repair, heating system efficiency, furnace tune-up">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Winni Furance | Professional Furnace Repair Services in Winnipeg, Manitoba">
+    <meta property="og:title" content="Winni Furnace | Professional Furnace Repair - Tune-Up Services in Winnipeg, Manitoba">
     <meta property="og:description"
-          content="Winni-Furance provides expert furnace repair services in Winnipeg and surrounding areas. Our qualified HVAC technicians offer 24/7/365 emergency repair services. Get your heating system back up and running efficiently with our high-quality furnace repairs. Contact us anytime, including after-hours, weekends, and holidays, at no extra cost. Book your furnace repair with Winni-Furance Heating & Cooling today!">
+          content="Winni-Furance provides expert furnace repair and tune-up services in Winnipeg and surrounding areas. Our qualified HVAC technicians offer 24/7/365 emergency repair services. Ensure your heating system operates efficiently with our high-quality furnace repairs and tune-ups. Contact us anytime, including after-hours, weekends, and holidays, at no extra cost. Book your furnace service with Winni-Furance Heating & Cooling today!">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{% url 'pages:furnace_repair' %}">
     <meta property="og:image" content="{% static 'img/repair.jpg' %}">
     <!-- Add the actual path to your image -->
-    <meta property="og:image:alt" content="Furnace Repair Services">
-
+    <meta property="og:image:alt" content="Furnace Repair - Tune-Up Services">
 {% endblock %}
-{% block title %}Winni Furance | Professional Furnace Repair Services in Winnipeg Manitoba{% endblock %}
+
+{% block title %}Winni Furnace | Professional Furnace Repair - Tune-Up Services in Winnipeg, Manitoba{% endblock %}
 
 {% block content %}
-
     <main id="main">
 
         <!-- ======= Breadcrumbs ======= -->
@@ -30,7 +30,7 @@
                     <li><a href="{% url "pages:index" %}">Home</a></li>
                     <li>Services</li>
                 </ol>
-                <h2>Furnace Repair Services</h2>
+                <h2>Furnace Repair & Tune-Up Services</h2>
             </div>
         </section><!-- End Breadcrumbs -->
 
@@ -40,59 +40,63 @@
                     <!-- Left column with image -->
                     <div class="col-md-6">
                         <img src="{% static 'img/repair.jpg' %}" class="img-fluid"
-                             alt="Image Description">
+                             alt="Furnace Repair - Tune-Up Image">
                     </div>
 
                     <!-- Right column with text -->
                     <div class="col-md-6">
                         <div class="p-4">
                             <h2 class="entry-title pt-5 pb-3 heading-red">
-                                Furnace Repair Services in Winnipeg
+                                Expert Furnace Repair & Tune-Up Services in Winnipeg
                             </h2>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="container pt-5">
-
                 <div class="entries">
-
                     <article class="entry entry-single">
-
                         <div class="entry-content">
                             <p>
-                                Is your furnace on the fritz? No need to worry –the team at Winni-furance
-                                Heating & Colling
-                                Conditioning has got your back! With qualified technicians and years of experience,
+                                Is your furnace on the fritz? No need to worry – the team at Winni-Furance
+                                Heating & Cooling has got your back! With qualified technicians and years of experience,
                                 homeowners can rest assured knowing their home is in good hands!
                             </p>
-                            <h3 class="heading-red">Get 24/7/365 Expert Furnace Repair Services in Winnipeg</h3>
+                            <h3 class="heading-red">When to Consider Furnace Repair or Tune-Up?</h3>
                             <p>
-                                With Years of experience partnering with homeowners throughout the Winnipeg area
+                                Over time, furnaces may show signs of wear and tear, affecting their performance and
+                                efficiency. Consider our expert services in the following situations:
+                            </p>
+                            <ul>
+                                <li>Your heating system is producing unusual noises.</li>
+                                <li>The heating performance has decreased, and your home feels colder than usual.</li>
+                                <li>You notice a sudden increase in energy bills, indicating a potential efficiency issue.</li>
+                                <li>Uneven heating throughout your home, with some rooms being warmer or cooler than others.</li>
+                                <li>Frequent on-and-off cycling, which may indicate a malfunctioning thermostat or other issues.</li>
+                            </ul>
+
+                            <h3 class="heading-red">Get 24/7/365 Expert Furnace Repair & Tune-Up Services in Winnipeg</h3>
+                            <p>
+                                With years of experience partnering with homeowners throughout the Winnipeg area
                                 and surrounding neighborhoods, our team of certified HVAC technicians is well-equipped
-                                to provide you with high-quality repairs that will have your heating system back up and
-                                operating correctly in no time.
+                                to provide you with high-quality repairs and tune-ups that will have your heating system
+                                back up and operating correctly in no time.
                             </p>
 
                             <p>
-                                No matter the time of day or year, you can count on us to accommodate your repair needs!
-                                We’re available 24/7/365 days a year, including after-hours, weekends, and holidays at
-                                no extra cost!
+                                No matter the time of day or year, you can count on us to accommodate your repair and
+                                tune-up needs! We’re available 24/7/365 days a year, including after-hours, weekends, and
+                                holidays at no extra cost!
                             </p>
-                            <h3 class="heading-red">Book your furnace repair in Winnipeg with Winni-furance
-                                Heating & Colling today!</h3>
-
+                            <h3 class="heading-red">Book Your Furnace Service in Winnipeg with Winni-Furance
+                                Heating & Cooling Today!</h3>
                         </div>
-
-
                     </article><!-- End blog entry -->
-
-
                 </div><!-- End blog entries list -->
             </div>
             {% include 'services/order_form.html' %}
         </section>
 
     </main><!-- End #main -->
-
 {% endblock %}

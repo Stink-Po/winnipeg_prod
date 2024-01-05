@@ -127,7 +127,7 @@
                                 <h5 class="heading-red pb-5">Confirm Your Email To get your unique invite link and Start
                                     Earning More Scores :</h5>
                                 <a class="button-style"
-                                   href="{% url 'accounts:send_email_confirmation' user_id=user.id|safe %}">Confirm Your
+                                   href="{% url 'accounts:send_email_confirmation' user_id=user.id %}">Confirm Your
                                     Email</a>
                             {% endif %}
                         </article>

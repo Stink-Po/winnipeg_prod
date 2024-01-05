@@ -4,32 +4,32 @@
     and You Can Use This Scores to Create Your Own discount code for Our Services With Every 100 Score You Can get 1 Code
     that allow You to get 10% discount on your next order its a seperated discount and You Still get your 10% discount on your membership
 </p>
-<h5 class="pt-5 pb-5">Share Your Invite Link With Your Forehands Now!</h5>
+<h5 class="pt-5 pb-5">Share Your Invite Link With Your Friends Now!</h5>
 <script>
     const invite_message = "Transform your home comfort with Winni-Furance! 🏡✨ We specialize in duct cleaning, " +
-                      "furnace repairs, and installations, Air conditioner Instalation and Repair right here in " +
+                      "furnace repairs, and installations, Air conditioner Installation and Repair right here in " +
                       "Winnipeg, Manitoba. 🛠️ Let's create a cozy" +
                       "haven together! Share the warmth with your friends. Visit us at winni-furnace.com! #Winnipeg " +
                       "#HomeComfort #FurnaceCare";
 </script>
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 p-3" >
             {% send_email "Join me on Winni-Furance" invite_message referral_link  %}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 p-3">
             {% post_to_telegram invite_message referral_link  %}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 p-3">
             {% post_to_whatsapp  referral_link invite_message  %}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 p-3">
             {% post_to_facebook referral_link invite_message %}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 p-3">
             {% post_to_twitter referral_link invite_message %}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 p-3">
             {% copy_to_clipboard referral_link invite_message %}
         </div>
 

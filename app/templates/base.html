@@ -34,6 +34,16 @@
     <script src="https://kit.fontawesome.com/ecec113220.js" crossorigin="anonymous"></script>
     <!-- Template Main CSS File -->
     <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <script>    (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {
+            (c[a].q = c[a].q || []).push(arguments)
+        };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "kgqi5cokma");</script>
 </head>
 
 <body>
@@ -115,22 +125,24 @@
                         </li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{% url 'offers:view_offers' %}">Offers</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{% url 'blog:post_list' %}">Blog</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:terms' %}">Terms of Service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:privacy' %}">Privacy Policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:terms' %}">Terms of Service</a>
+                        </li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:privacy' %}">Privacy Policy</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:duct_cleaning' %}">Duct
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:duct_cleaning' %}">Air Vent Duct
                             Cleaning</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:furnace_installation' %}">Furnace
                             Installation</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:furnace_repair' %}">Furnace
-                            Repair </a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:furnace_cleaning' %}">Furnace
-                            Cleaning</a></li>
+                            Repair - Tune Up </a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pages:furnace_cleaning' %}">HRV
+                            Installation</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a
                                 href="{% url 'pages:air_conditioner_installation' %}">Air Conditioner Installation</a>
                         </li>
@@ -160,6 +172,8 @@
         <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
             <a target="_blank" href="https://www.facebook.com/profile.php?id=100090651934963" class="facebook"><i
                     class="bx bxl-facebook"></i></a>
+            <a target="_blank" href="https://www.instagram.com/winni_furnace?igsh=cnpmZXRta213anJl" class="instagram"><i
+                    class="bx bxl-instagram"></i></a>
         </div>
     </div>
 </footer><!-- End Footer -->
@@ -192,7 +206,7 @@
         "name": "Winni Furnace",
         "description": "Expert duct cleaning and furnace installation repair and Cleaning and Air Conditioner installation and tune-up services in winnipeg manitoba.",
         "url": "https://www.winni-furnace.ca",
-        "logo": "{% static 'img/logo-1-removebg-preview.png' %}",
+        "logo": "{% static 'img/favicon-32x32.png' %}",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "80 Lomond Blvd",
